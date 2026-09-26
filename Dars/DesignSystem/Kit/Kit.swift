@@ -570,7 +570,7 @@ extension DarsEmpty where Action == EmptyView {
     }
 }
 
-struct DarsError: View {
+struct DarsErrorView: View {
     let message: String
     var retry: LocalizedStringKey = "Try again"
     let onRetry: () -> Void
@@ -669,7 +669,7 @@ struct ProgressRing<Content: View>: View {
 struct CountingNumber: View, Animatable {
     var value: Double
     var suffix: String = ""
-    var font: Font = .system(size: 24, weight: .bold)
+    var style: Font = .system(size: 24, weight: .bold)
     var tracking: CGFloat = -0.5
 
     var animatableData: Double {
@@ -679,7 +679,7 @@ struct CountingNumber: View, Animatable {
 
     var body: some View {
         Text(verbatim: "\(Int(value.rounded()))\(suffix)")
-            .font(font)
+            .font(style)
             .monospacedDigit()
             .darsTracking(tracking)
     }
@@ -688,13 +688,13 @@ struct CountingNumber: View, Animatable {
 struct AnimatedNumber: View {
     let value: Int
     var suffix: String = ""
-    var font: Font = .system(size: 24, weight: .bold)
+    var style: Font = .system(size: 24, weight: .bold)
     var colour: Color = Tokens.text
     @Environment(\.accessibilityReduceMotion) private var reduce
     @State private var shown: Double = 0
 
     var body: some View {
-        CountingNumber(value: shown, suffix: suffix, font: font)
+        CountingNumber(value: shown, suffix: suffix, style: style)
             .foregroundStyle(colour)
             .onAppear { go(value) }
             .onChange(of: value) { _, v in go(v) }

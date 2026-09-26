@@ -14,7 +14,9 @@
 		1D6648F7A4B97A3D58EC4E96 = {isa = PBXBuildFile; fileRef = 019B4FD2CD1004D243092F47; };
 		2393D81E534212D186464B22 = {isa = PBXBuildFile; fileRef = 943206E52509834B95FB1E45; };
 		24B08B565CA0A165FA85CCC8 = {isa = PBXBuildFile; fileRef = 62A74BDA73152A8885050E15; };
+		2742A2A724E2A9F42601AF84 = {isa = PBXBuildFile; fileRef = 071CDDEA96AC722680D03E81; };
 		275BD30C9092BCC0B2B7AAAD = {isa = PBXBuildFile; fileRef = B133E8B2DBE3E751CAC5F253; };
+		275C0A65233579C49A390E93 = {isa = PBXBuildFile; fileRef = 44BA088B578AD62DAC0815AD; };
 		2B1C294F7B99CE4545F13D46 = {isa = PBXBuildFile; fileRef = C7C997B9132CB1A48A11EF42; };
 		303B8DF59392995B29E5E9B3 = {isa = PBXBuildFile; fileRef = D38AC4F609D234048A5C6750; };
 		3103AFDF4B9FA95E575D8DCE = {isa = PBXBuildFile; fileRef = E8D0BA82612FAFD2766F8C2A; };
@@ -74,6 +76,7 @@
 		F8F49E7B014712CCE0951354 = {isa = PBXBuildFile; fileRef = 2D63B1E8309D2B661768785A; };
 		FA126DEC093EFF19F7C05AFA = {isa = PBXBuildFile; fileRef = 36304E25C54228E547869F83; };
 		FA3465B1846D717003361343 = {isa = PBXBuildFile; fileRef = 52E5FB495DDDE4B2CB4978B5; };
+		FCCE045302E42CE6D6374C13 = {isa = PBXBuildFile; fileRef = 63E2588D6A6129A006C7FF3E; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +85,7 @@
 		026A27A9562257F6D6A22277 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		033BE919AEEA15AF7BC5B5DF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
 		0511EBBDF0C093235E03426D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressMotionStyle.swift; sourceTree = "<group>"; };
+		071CDDEA96AC722680D03E81 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentSignUpView.swift; sourceTree = "<group>"; };
 		143AF8596C96A65F8E529991 = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		14641630C5D7F3BDD58EA1ED = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatView.swift; sourceTree = "<group>"; };
 		1AC40726BF043E117635D04A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,7 @@
 		3EE5089F53C27BB2002E3881 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentHomeView.swift; sourceTree = "<group>"; };
 		3F3DF48B63A39E2E81143125 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksView.swift; sourceTree = "<group>"; };
 		4126EB1C9BE3C2EE189012D5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		44BA088B578AD62DAC0815AD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeBoxes.swift; sourceTree = "<group>"; };
 		4536D5440B016E3E5E4C8135 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45421DE0905CA8932EB2A183 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStore.swift; sourceTree = "<group>"; };
 		484AA59FDC2615C86DFD34F7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsData.swift; sourceTree = "<group>"; };
@@ -105,6 +110,7 @@
 		62A74BDA73152A8885050E15 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bits.swift; sourceTree = "<group>"; };
 		6390850025AC0CAAA3770860 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		63B80F6851CE345C2CB9873E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
+		63E2588D6A6129A006C7FF3E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKit.swift; sourceTree = "<group>"; };
 		6787A58DC5832483BA6571BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPeopleView.swift; sourceTree = "<group>"; };
 		6DB3A25D737D6245F65F7922 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOverviewView.swift; sourceTree = "<group>"; };
 		7575BA20FCB5A626E57AF50A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookView.swift; sourceTree = "<group>"; };
@@ -372,10 +378,13 @@
 		D7B5EE1E018DCBF2E46FEC13 = {
 			isa = PBXGroup;
 			children = (
+				63E2588D6A6129A006C7FF3E,
 				ABCAF5F10163DFB91FA0E576,
+				44BA088B578AD62DAC0815AD,
 				4126EB1C9BE3C2EE189012D5,
 				6390850025AC0CAAA3770860,
 				32E437DF02C185210D55901B,
+				071CDDEA96AC722680D03E81,
 				36304E25C54228E547869F83,
 			);
 			path = Auth;
@@ -519,10 +528,13 @@
 				F592BA25A5010EA789A400FB,
 				ED01BB029C3E109FA236B769,
 				3C571EE221ABE95FCB8F2997,
+				FCCE045302E42CE6D6374C13,
 				87BC0FAF8BAB9997EB23BB75,
+				275C0A65233579C49A390E93,
 				1BC7680B47B0AE7BC9D6F48F,
 				7DD5952381CD87A0CB0512B5,
 				F02E1834770837AC4CC56A25,
+				2742A2A724E2A9F42601AF84,
 				FA126DEC093EFF19F7C05AFA,
 				9E810687338562087EE0B8BE,
 				F6F59B9F07DBBB12AFED9C1A,

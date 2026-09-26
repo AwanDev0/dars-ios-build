@@ -19,161 +19,226 @@ struct RosterEntry: Codable, Identifiable, Hashable, Sendable {
         case avatarColor = "avatar_color"
         case avatarUrl = "avatar_url"
     }
+
+    func displayName(kurdish: Bool) -> String {
+        if kurdish, let ku = fullNameKu, !ku.isEmpty { return ku }
+        return fullName ?? ""
+    }
+
+    var initials: String { avatarInitials ?? String((fullName ?? "").prefix(1)).uppercased() }
 }
 
 @MainActor
 @Observable
 final class StudentDoorStore {
+    enum Step { case code, name }
+
+    var step: Step = .code
     var code = ""
     private(set) var roster: [RosterEntry] = []
-    private(set) var looking = false
-    private(set) var signing = false
-    private(set) var error: String?
     var chosen: RosterEntry?
     var password = ""
+    private(set) var working = false
+    private(set) var codeFound = false
+    var error: String?
 
-    func lookUp() async {
-        let trimmed = code.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
-        guard trimmed.count >= 4 else { return }
-        looking = true
+    static let unknownCode = "unknown_code"
+    static let badCredentials = "bad_credentials"
+
+    func onCode(_ raw: String) {
+        code = String(raw.filter { !$0.isWhitespace && $0 != "-" }.uppercased().prefix(6))
         error = nil
-        defer { looking = false }
+    }
+
+    func loadRoster() async {
+        guard code.count >= 4, !working else { return }
+        working = true
+        error = nil
         do {
             let rows: [RosterEntry] = try await SupabaseService.client
-                .rpc("class_roster", params: ["p_code": trimmed])
+                .rpc("class_roster", params: ["p_code": code])
                 .execute()
                 .value
-            roster = rows
-            if rows.isEmpty { error = "No class has that code. Ask your teacher for the code on the class page." }
+            if rows.isEmpty {
+                working = false
+                error = Self.unknownCode
+                return
+            }
+            working = false
+            codeFound = true
+            try? await Task.sleep(for: .milliseconds(620))
+            codeFound = false
+            roster = rows.sorted { ($0.fullName ?? "") < ($1.fullName ?? "") }
+            withAnimation(Motion.emphasis) { step = .name }
         } catch {
-            self.error = "Couldn't reach the school. Check the connection and try again."
+            working = false
+            self.error = String(describing: error)
+        }
+    }
+
+    func back() {
+        if step == .name {
+            withAnimation(Motion.emphasis) {
+                step = .code
+                roster = []
+                chosen = nil
+                password = ""
+                error = nil
+            }
         }
     }
 
     func signIn() async {
-        guard let who = chosen, !password.isEmpty else { return }
-        signing = true
+        guard let who = chosen, !password.isEmpty, !working else { return }
+        working = true
         error = nil
-        defer { signing = false }
-        struct Body: Encodable { let student_id: String; let password: String }
+        struct Body: Encodable, Sendable { let student_id: String; let password: String }
         struct Reply: Decodable {
-            struct S: Decodable { let access_token: String; let refresh_token: String }
-            let session: S?
+            struct Session: Decodable { let access_token: String; let refresh_token: String? }
+            let session: Session?
             let error: String?
         }
         do {
             let reply: Reply = try await SupabaseService.client.functions
                 .invoke("student-login", options: FunctionInvokeOptions(body: Body(student_id: who.id.uuidString, password: password)))
             if let s = reply.session {
-                try await SupabaseService.auth.setSession(accessToken: s.access_token, refreshToken: s.refresh_token)
+                try await SupabaseService.auth.setSession(accessToken: s.access_token, refreshToken: s.refresh_token ?? "")
                 HapticEngine.play(.success)
             } else {
-                error = reply.error == "bad_credentials" ? "That password isn't right." : (reply.error ?? "Sign-in failed.")
-                HapticEngine.play(.error)
+                error = reply.error ?? Self.badCredentials
             }
         } catch {
-            self.error = String(describing: error).lowercased().contains("401") ? "That password isn't right." : "Couldn't sign in. Check the connection and try again."
-            HapticEngine.play(.error)
+            self.error = Self.badCredentials
         }
+        working = false
     }
 }
 
 struct StudentSignInView: View {
+    var initialCode: String? = nil
+    @Environment(\.dismiss) private var dismiss
     @Environment(LanguageStore.self) private var language
     @State private var store = StudentDoorStore()
-    @State private var scanning = false
-    @FocusState private var codeFocused: Bool
+    @State private var revealed = false
+
+    private var steps: [String] { [L("student_signin_step_code"), L("student_signin_step_name"), L("login_password")] }
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: Metrics.Space.lg) {
-                VStack(alignment: .leading, spacing: 4) {
-                    Text("Your class code").darsType(.title2).foregroundStyle(DarsColor.labelPrimary)
-                    Text("The code your teacher shows on the class page. Then tap your own name.")
-                        .darsType(.subheadline).foregroundStyle(DarsColor.labelSecondary)
-                }
-                HStack(spacing: Metrics.Space.sm) {
-                    TextField("e.g. DEMO10", text: $store.code)
-                        .textInputAutocapitalization(.characters)
-                        .autocorrectionDisabled()
-                        .font(.system(size: 22, weight: .bold, design: .rounded))
-                        .kerning(2)
-                        .focused($codeFocused)
-                        .submitLabel(.search)
-                        .onSubmit { Task { await store.lookUp() } }
-                        .padding(.horizontal, 14)
-                        .frame(height: 56)
-                        .background(DarsColor.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                        .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(codeFocused ? DarsColor.accent : DarsColor.separator, lineWidth: codeFocused ? 1.5 : 0.5))
-                    Button { HapticEngine.play(.selection); scanning = true } label: {
-                        Image(systemName: "qrcode.viewfinder").font(.system(size: 19)).frame(width: 56, height: 56)
-                            .background(DarsColor.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                    }
-                    .buttonStyle(.plain)
-                    DarsButton(title: "Find", kind: .primary, systemImage: "magnifyingglass", isLoading: store.looking) {
-                        Task { await store.lookUp() }
-                    }
-                }
-
-                if !store.roster.isEmpty {
-                    Text("Tap your name").darsType(.caption).textCase(.uppercase).kerning(0.6).foregroundStyle(DarsColor.labelTertiary).padding(.horizontal, 4)
-                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 150), spacing: 10)], spacing: 10) {
-                        ForEach(store.roster) { who in
-                            let on = store.chosen?.id == who.id
-                            Button {
-                                HapticEngine.play(.selection)
-                                withAnimation(Motion.selection) { store.chosen = who }
-                            } label: {
-                                HStack(spacing: 10) {
-                                    ZStack {
-                                        Circle().fill(Color(hexString: who.avatarColor)).frame(width: 36, height: 36)
-                                        Text(who.avatarInitials ?? String((who.fullName ?? "?").prefix(1))).font(.system(size: 13, weight: .bold)).foregroundStyle(.white)
-                                    }
-                                    Text(language.language.isKurdish ? (who.fullNameKu ?? who.fullName ?? "") : (who.fullName ?? ""))
-                                        .darsType(.subheadline).foregroundStyle(DarsColor.labelPrimary).lineLimit(1)
-                                    Spacer(minLength: 0)
-                                }
-                                .padding(10)
-                                .frame(maxWidth: .infinity)
-                                .background(DarsColor.surface, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                                .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).strokeBorder(on ? DarsColor.accent : DarsColor.separator, lineWidth: on ? 1.5 : 0.5))
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
-                }
-
-                if let who = store.chosen {
-                    VStack(alignment: .leading, spacing: Metrics.Space.sm) {
-                        Text("Password for \(who.fullName ?? "")").darsType(.caption).textCase(.uppercase).kerning(0.6).foregroundStyle(DarsColor.labelTertiary).padding(.horizontal, 4)
-                        SecureField("Password", text: $store.password)
-                            .textContentType(.password)
-                            .submitLabel(.go)
-                            .onSubmit { Task { await store.signIn() } }
-                            .padding(.horizontal, 14)
-                            .frame(height: 54)
-                            .background(DarsColor.surface, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-                            .overlay(RoundedRectangle(cornerRadius: 16, style: .continuous).strokeBorder(DarsColor.separator, lineWidth: 0.5))
-                        DarsButton(title: "Sign In", kind: .primary, systemImage: "arrow.right", isLoading: store.signing, fullWidth: true) {
-                            Task { await store.signIn() }
-                        }
-                        .disabled(store.password.isEmpty)
-                    }
-                    .transition(.move(edge: .bottom).combined(with: .opacity))
-                }
-
-                if let error = store.error {
-                    Text(error).darsType(.footnote).foregroundStyle(DarsColor.danger)
+        AuthShell(title: L("login_sign_in"), subtitle: subtitle, onBack: back) {
+            ZStack {
+                if store.step == .code {
+                    codeStep.transition(.asymmetric(insertion: .opacity.animation(Motion.emphasis), removal: .opacity.animation(Motion.standard)))
+                } else {
+                    nameStep.transition(.asymmetric(insertion: .opacity.animation(Motion.emphasis), removal: .opacity.animation(Motion.standard)))
                 }
             }
-            .padding(Metrics.Space.md)
         }
-        .background(DarsColor.backgroundBase.ignoresSafeArea())
-        .navigationTitle("I'm a student")
-        .navigationBarTitleDisplayMode(.inline)
-        .onAppear { codeFocused = true }
-        .sheet(isPresented: $scanning) {
-            ScanCodeSheet { store.code = $0; Task { await store.lookUp() } }
+        .onAppear {
+            if let initialCode, store.code.isEmpty {
+                store.onCode(initialCode)
+            }
         }
     }
+
+    private var subtitle: String {
+        switch store.step {
+        case .code: return L("student_signin_code_body")
+        case .name: return P("classes_student_count", store.roster.count)
+        }
+    }
+
+    private func back() {
+        if store.step == .name { store.back() } else { dismiss() }
+    }
+
+    private var codeStep: some View {
+        AuthCard {
+            StepsLine(current: 0, labels: steps)
+            PanelHeading(title: L("student_signin_code_title"), subtitle: L("student_signin_code_hint"))
+            AuthLabel(text: L("student_signin_class_code"))
+            CodeBoxes(
+                value: Binding(get: { store.code }, set: { store.onCode($0) }),
+                state: store.codeFound ? .success : (store.working ? .checking : (store.error != nil ? .error : .idle)),
+                description: L("student_signin_class_code"),
+                onFilled: { _ in hideKeyboard(); Task { await store.loadRoster() } }
+            )
+            .padding(.vertical, 6)
+            Text(verbatim: L("code_where_hint"))
+                .font(.system(size: 12))
+                .foregroundStyle(Tokens.textMuted)
+                .padding(.top, 2)
+                .padding(.bottom, 4)
+            Reassure(icon: "Filled.VerifiedUser", text: L("student_signin_reassure"))
+            MessageLine(message: store.error.map { $0 == StudentDoorStore.unknownCode ? L("student_signin_wrong_code") : L("student_signin_could_not_check") })
+                .padding(.bottom, store.error == nil ? 0 : 8)
+            Spacer().frame(height: 8)
+            ActionButton(title: L("join_continue"), enabled: store.code.count == 6, working: store.working) {
+                hideKeyboard()
+                Task { await store.loadRoster() }
+            }
+        }
+    }
+
+    private var nameStep: some View {
+        AuthCard {
+            StepsLine(current: store.chosen == nil ? 1 : 2, labels: steps)
+            PanelHeading(title: L("student_signin_pick_name"), subtitle: L("student_signin_pick_name_body"))
+            if store.roster.isEmpty {
+                Reassure(icon: "Filled.Groups", text: L("student_signin_no_one"))
+            }
+            VStack(spacing: 8) {
+                ForEach(Array(store.roster.enumerated()), id: \.element.id) { index, student in
+                    NameRow(
+                        name: student.displayName(kurdish: language.language.isKurdish),
+                        initials: student.initials,
+                        colour: Color(hexString: student.avatarColor),
+                        avatarURL: student.avatarUrl,
+                        selected: store.chosen?.id == student.id
+                    ) {
+                        withAnimation(Motion.emphasis) {
+                            store.chosen = student
+                            store.error = nil
+                        }
+                    }
+                    .darsStagger(index, step: 0.04, delay: 0.06, rise: 8)
+                }
+            }
+            if store.chosen != nil {
+                VStack(alignment: .leading, spacing: 0) {
+                    AuthLabel(text: L("login_password"))
+                    AuthField(
+                        text: Binding(get: { store.password }, set: { store.password = $0; store.error = nil }),
+                        icon: "Filled.Lock",
+                        placeholder: L("student_signin_password_placeholder"),
+                        secure: true,
+                        revealed: revealed,
+                        content: .password,
+                        submit: .go,
+                        onSubmit: { hideKeyboard(); Task { await store.signIn() } },
+                        onReveal: { HapticEngine.play(.selection); revealed.toggle() }
+                    )
+                    Reassure(icon: "Filled.Lock", text: L("student_signin_password_reassure"))
+                }
+                .padding(.top, 20)
+                .transition(.opacity.combined(with: .move(edge: .top)))
+            }
+            MessageLine(message: store.error.map { $0 == "not_a_student" ? L("student_signin_not_a_student") : L("student_signin_wrong_password") })
+                .padding(.top, store.error == nil ? 0 : 8)
+            Spacer().frame(height: 16)
+            ActionButton(title: L("login_sign_in"), enabled: store.chosen != nil && !store.password.isEmpty, working: store.working) {
+                hideKeyboard()
+                Task { await store.signIn() }
+            }
+            if store.chosen == nil {
+                Text(verbatim: L("student_signin_pick_first"))
+                    .font(.system(size: 12.5))
+                    .foregroundStyle(Tokens.textMuted)
+                    .padding(.top, 8)
+            }
+        }
+    }
+}
+
+func hideKeyboard() {
+    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
 }

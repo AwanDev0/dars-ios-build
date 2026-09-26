@@ -10,7 +10,7 @@ struct RootView: View {
                 RestoringView()
 
             case .signedOut:
-                NavigationStack { LoginView() }
+                LoginView()
                     .transition(.opacity)
 
             case .signedIn(let profile):

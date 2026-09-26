@@ -52,7 +52,7 @@ final class AuthStore {
 
         let typed = email.trimmingCharacters(in: .whitespacesAndNewlines)
         let digits = typed.filter(\.isNumber)
-        let isPhone = !typed.contains("@") && digits.count >= 6
+        let isPhone = !typed.contains("@") && digits.count >= 7
         let first = isPhone ? "p\(digits)@parent.kurdedu.app" : typed
 
         do {
