@@ -290,68 +290,13 @@ struct ThreadView: View {
     var body: some View {
         VStack(spacing: 0) {
             if let p = store.pinned { pinnedBar(p) }
-            ScrollViewReader { proxy in
-                ScrollView {
-                    LazyVStack(spacing: 4) {
-                        if store.loading { ProgressView().padding(.top, 40) }
-                        ForEach(Array(store.messages.enumerated()), id: \.element.id) { i, m in
-                            let prev = i > 0 ? store.messages[i - 1] : nil
-                            if prev == nil || !Calendar.current.isDate(prev!.date, inSameDayAs: m.date) {
-                                Text(dayLabel(m.date)).darsType(.caption).foregroundStyle(DarsColor.labelTertiary).padding(.vertical, 10)
-                            }
-                            bubble(m, showName: conversation.kind != "dm" && m.senderId != me.id && prev?.senderId != m.senderId)
-                                .id(m.id)
-                        }
-                        Color.clear.frame(height: 8).id("bottom")
-                    }
-                    .padding(.horizontal, Metrics.Space.md)
-                    .padding(.top, Metrics.Space.sm)
-                }
-                .scrollDismissesKeyboard(.interactively)
-                .onChange(of: store.messages.count) { withAnimation(Motion.arrive) { proxy.scrollTo("bottom", anchor: .bottom) } }
-                .onChange(of: store.loading) { proxy.scrollTo("bottom", anchor: .bottom) }
-            }
-            if store.uploading {
-                HStack(spacing: 8) { ProgressView().controlSize(.small); Text("Sending…").darsType(.caption).foregroundStyle(DarsColor.labelTertiary) }
-                    .frame(maxWidth: .infinity).padding(.vertical, 6).background(DarsColor.surface)
-            }
-            if conversation.locked {
-                HStack(spacing: 8) {
-                    Image(systemName: "lock.fill")
-                    Text("Only the school posts here.")
-                }
-                .darsType(.footnote).foregroundStyle(DarsColor.labelTertiary)
-                .frame(maxWidth: .infinity).padding(.vertical, 14)
-                .background(DarsColor.surface)
-            } else {
-                Composer(conversation: conversation.id, me: me, store: store, replyingTo: $replyingTo)
-            }
+            messageList
+            bottomBar
         }
         .background(DarsColor.backgroundBase.ignoresSafeArea())
         .navigationTitle(conversation.title)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Button { showingInfo = true } label: {
-                    VStack(spacing: 0) {
-                        Text(conversation.title).darsType(.headline).foregroundStyle(DarsColor.labelPrimary).lineLimit(1)
-                        Text(conversation.kind == "dm" ? "Tap for options" : "\(store.members.count) members").darsType(.caption).foregroundStyle(DarsColor.labelTertiary)
-                    }
-                }
-                .buttonStyle(.plain)
-            }
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    Button(store.muted ? "Unmute" : "Mute", systemImage: store.muted ? "bell" : "bell.slash") {
-                        Task { await store.setMuted(conversation.id, !store.muted) }
-                    }
-                    Button("Members", systemImage: "person.2") { showingInfo = true }
-                    if conversation.kind != "dm" {
-                        Button("Leave the room", systemImage: "rectangle.portrait.and.arrow.right", role: .destructive) { confirmLeave = true }
-                    }
-                } label: { Image(systemName: "ellipsis.circle") }
-            }
-        }
+        .toolbar { threadToolbar }
         .task { await store.open(conversation.id, me: me.id) }
         .onDisappear { store.close() }
         .sheet(isPresented: $showingInfo) {
@@ -368,6 +313,87 @@ struct ThreadView: View {
             Button("Cancel", role: .cancel) {}
         } message: {
             Text("You stop getting its messages. The school can put you back in it.")
+        }
+    }
+
+    private var messageList: some View {
+        ScrollViewReader { proxy in
+            ScrollView {
+                LazyVStack(spacing: 4) {
+                    if store.loading { ProgressView().padding(.top, 40) }
+                    ForEach(Array(store.messages.enumerated()), id: \.element.id) { i, m in
+                        messageRow(at: i, m)
+                    }
+                    Color.clear.frame(height: 8).id("bottom")
+                }
+                .padding(.horizontal, Metrics.Space.md)
+                .padding(.top, Metrics.Space.sm)
+            }
+            .scrollDismissesKeyboard(.interactively)
+            .onChange(of: store.messages.count) { withAnimation(Motion.arrive) { proxy.scrollTo("bottom", anchor: .bottom) } }
+            .onChange(of: store.loading) { proxy.scrollTo("bottom", anchor: .bottom) }
+        }
+    }
+
+    @ViewBuilder
+    private func messageRow(at i: Int, _ m: MessageRow) -> some View {
+        let prev: MessageRow? = i > 0 ? store.messages[i - 1] : nil
+        let newDay: Bool = prev.map { !Calendar.current.isDate($0.date, inSameDayAs: m.date) } ?? true
+        let showName: Bool = conversation.kind != "dm" && m.senderId != me.id && prev?.senderId != m.senderId
+        if newDay {
+            Text(dayLabel(m.date)).darsType(.caption).foregroundStyle(DarsColor.labelTertiary).padding(.vertical, 10)
+        }
+        bubble(m, showName: showName)
+            .id(m.id)
+    }
+
+    @ViewBuilder
+    private var bottomBar: some View {
+        if store.uploading {
+            HStack(spacing: 8) {
+                ProgressView().controlSize(.small)
+                Text("Sending…").darsType(.caption).foregroundStyle(DarsColor.labelTertiary)
+            }
+            .frame(maxWidth: .infinity).padding(.vertical, 6).background(DarsColor.surface)
+        }
+        if conversation.locked {
+            HStack(spacing: 8) {
+                Image(systemName: "lock.fill")
+                Text("Only the school posts here.")
+            }
+            .darsType(.footnote).foregroundStyle(DarsColor.labelTertiary)
+            .frame(maxWidth: .infinity).padding(.vertical, 14)
+            .background(DarsColor.surface)
+        } else {
+            Composer(conversation: conversation.id, me: me, store: store, replyingTo: $replyingTo)
+        }
+    }
+
+    private var headerSubtitle: LocalizedStringKey {
+        conversation.kind == "dm" ? "Tap for options" : "\(store.members.count) members"
+    }
+
+    @ToolbarContentBuilder
+    private var threadToolbar: some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            Button { showingInfo = true } label: {
+                VStack(spacing: 0) {
+                    Text(conversation.title).darsType(.headline).foregroundStyle(DarsColor.labelPrimary).lineLimit(1)
+                    Text(headerSubtitle).darsType(.caption).foregroundStyle(DarsColor.labelTertiary)
+                }
+            }
+            .buttonStyle(.plain)
+        }
+        ToolbarItem(placement: .topBarTrailing) {
+            Menu {
+                Button(store.muted ? "Unmute" : "Mute", systemImage: store.muted ? "bell" : "bell.slash") {
+                    Task { await store.setMuted(conversation.id, !store.muted) }
+                }
+                Button("Members", systemImage: "person.2") { showingInfo = true }
+                if conversation.kind != "dm" {
+                    Button("Leave the room", systemImage: "rectangle.portrait.and.arrow.right", role: .destructive) { confirmLeave = true }
+                }
+            } label: { Image(systemName: "ellipsis.circle") }
         }
     }
 

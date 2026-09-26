@@ -173,6 +173,8 @@ final class ExamsStore {
             guard let score, let max = assessment.maxScore, max > 0 else { return nil }
             return score * 100 / max
         }
+        static func == (a: Line, b: Line) -> Bool { a.id == b.id && a.score == b.score }
+        func hash(into hasher: inout Hasher) { hasher.combine(id) }
     }
     private(set) var lines: [Line] = []
     private(set) var loading = true
