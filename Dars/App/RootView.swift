@@ -21,6 +21,10 @@ struct RootView: View {
             case .orphaned:
                 OrphanedView()
                     .transition(.opacity)
+
+            case .suspended(let reason):
+                SuspendedView(reason: reason)
+                    .transition(.opacity)
             }
         }
         .animation(Motion.symmetric, value: auth.state)
@@ -36,12 +40,7 @@ struct RootView: View {
 
 private struct RestoringView: View {
     var body: some View {
-        ZStack {
-            DarsColor.backgroundBase.ignoresSafeArea()
-            Text("Dars")
-                .darsType(.largeTitle)
-                .foregroundStyle(DarsColor.labelTertiary)
-        }
+        Tokens.bg.ignoresSafeArea()
     }
 }
 
@@ -49,19 +48,28 @@ private struct OrphanedView: View {
     @Environment(AuthStore.self) private var auth
 
     var body: some View {
-        VStack(spacing: Metrics.Space.xl) {
-            ContentUnavailableView(
-                "orphaned.title",
-                systemImage: "building.2.crop.circle.badge.questionmark",
-                description: Text("orphaned.body")
-            )
-            Button("common.signOut") {
+        DarsEmpty(title: L("orphaned_title"), body_: L("orphaned_body")) {
+            MotionButton(title: LocalizedStringKey(L("common_sign_out")), destructive: true) {
                 Task { await auth.signOut() }
             }
-            .buttonStyle(.darsButton)
-            .foregroundStyle(DarsColor.danger)
         }
-        .padding(Metrics.Space.lg)
-        .background(DarsColor.backgroundBase)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Tokens.bg.ignoresSafeArea())
+    }
+}
+
+private struct SuspendedView: View {
+    let reason: String?
+    @Environment(AuthStore.self) private var auth
+
+    var body: some View {
+        let text = (reason?.isEmpty == false) ? L("suspended_body_reason", reason!) : L("suspended_body")
+        DarsEmpty(title: L("suspended_title"), body_: text) {
+            MotionButton(title: LocalizedStringKey(L("common_sign_out")), destructive: true) {
+                Task { await auth.signOut() }
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Tokens.bg.ignoresSafeArea())
     }
 }

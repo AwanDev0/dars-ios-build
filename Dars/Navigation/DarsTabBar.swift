@@ -257,3 +257,19 @@ private struct PostDisc: View {
         .accessibilityLabel(Text(verbatim: tab.title))
     }
 }
+
+struct OpenTabAction {
+    let open: (String) -> Void
+    func callAsFunction(_ id: String) { open(id) }
+}
+
+private struct OpenTabKey: EnvironmentKey {
+    static let defaultValue = OpenTabAction { _ in }
+}
+
+extension EnvironmentValues {
+    var openTab: OpenTabAction {
+        get { self[OpenTabKey.self] }
+        set { self[OpenTabKey.self] = newValue }
+    }
+}

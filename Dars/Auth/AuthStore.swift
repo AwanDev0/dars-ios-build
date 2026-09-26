@@ -10,6 +10,7 @@ final class AuthStore {
         case signedOut
         case signedIn(Profile)
         case orphaned
+        case suspended(String?)
     }
 
     private(set) var state: State = .restoring
@@ -100,7 +101,14 @@ final class AuthStore {
                 .single()
                 .execute()
                 .value
-            state = .signedIn(profile)
+            if profile.suspendedAt != nil {
+                struct Contact: Decodable { let suspended_reason: String? }
+                struct Args: Encodable, Sendable { let p_ids: [UUID] }
+                let rows: [Contact] = (try? await SupabaseService.client.rpc("profile_contacts", params: Args(p_ids: [profile.id])).execute().value) ?? []
+                state = .suspended(rows.first?.suspended_reason)
+            } else {
+                state = .signedIn(profile)
+            }
         } catch {
             state = .orphaned
         }

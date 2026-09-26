@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0476A05972EC595F0ECDBEFF = {isa = PBXBuildFile; fileRef = B58D7F079C086DE268A0D096; };
+		07B510F772119C37755B38B4 = {isa = PBXBuildFile; fileRef = F8F9E24DB5585D2CCFB53E71; };
 		0DCAF242B24CAB624A098A96 = {isa = PBXBuildFile; fileRef = B9230084788DAB705EBD0D48; };
 		1718FDBBC303AA000CD17079 = {isa = PBXBuildFile; fileRef = 2ACD4B727A1AF3327BE0F34F; };
 		1BC7680B47B0AE7BC9D6F48F = {isa = PBXBuildFile; fileRef = 4126EB1C9BE3C2EE189012D5; };
@@ -24,6 +25,7 @@
 		39EC5CF68F09A8CB88F8C06A = {isa = PBXBuildFile; fileRef = 4EB52EDCF982AF555696EB7B; };
 		3A94A2F29820E6762845E7B2 = {isa = PBXBuildFile; fileRef = FA8866A16C892D62E7388421; };
 		3C571EE221ABE95FCB8F2997 = {isa = PBXBuildFile; fileRef = 824BEF4A4B9216B2FFE6641B; };
+		48F7A0607EF3032BBF8FB801 = {isa = PBXBuildFile; fileRef = 8E03ECA1C3E25895AE41905C; };
 		4C3C0F0970617774E73EC5E1 = {isa = PBXBuildFile; fileRef = CC844D1CC1E047578DE8FDA7; };
 		4E3CA19D1A0DB61838167CBA = {isa = PBXBuildFile; fileRef = 8A8AAFDACD85384BB1BBAB08; };
 		4F8CD9D0A7ED8FB8FD89607F = {isa = PBXBuildFile; fileRef = 85D017029B62617BDB7B88DD; };
@@ -68,6 +70,7 @@
 		E3343957EDB095342C88DF0A = {isa = PBXBuildFile; fileRef = 5838192D12AFB7A10EFE72A9; };
 		E4129B7A75F30047F18DAF45 = {isa = PBXBuildFile; fileRef = 63B80F6851CE345C2CB9873E; };
 		ED01BB029C3E109FA236B769 = {isa = PBXBuildFile; fileRef = CA33E6B461369E960BFCFE92; };
+		ED7F068F3779E03A3B676AF9 = {isa = PBXBuildFile; fileRef = 65F708F5F0745EF4275F9C01; };
 		F02E1834770837AC4CC56A25 = {isa = PBXBuildFile; fileRef = 32E437DF02C185210D55901B; };
 		F2DDD575D7B2C5757527E627 = {isa = PBXBuildFile; fileRef = 45421DE0905CA8932EB2A183; };
 		F5686C772D5B87D061A4BAF3 = {isa = PBXBuildFile; fileRef = D0F13A5A6FD426BAB5A252A2; };
@@ -77,6 +80,7 @@
 		F8F49E7B014712CCE0951354 = {isa = PBXBuildFile; fileRef = 2D63B1E8309D2B661768785A; };
 		FA126DEC093EFF19F7C05AFA = {isa = PBXBuildFile; fileRef = 36304E25C54228E547869F83; };
 		FA3465B1846D717003361343 = {isa = PBXBuildFile; fileRef = 52E5FB495DDDE4B2CB4978B5; };
+		FC58F0338BAD2070355DE630 = {isa = PBXBuildFile; fileRef = 86EF6B706A9B7E29825F4AC3; };
 		FCCE045302E42CE6D6374C13 = {isa = PBXBuildFile; fileRef = 63E2588D6A6129A006C7FF3E; };
 /* End PBXBuildFile section */
 
@@ -112,12 +116,15 @@
 		6390850025AC0CAAA3770860 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		63B80F6851CE345C2CB9873E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		63E2588D6A6129A006C7FF3E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthKit.swift; sourceTree = "<group>"; };
+		65F708F5F0745EF4275F9C01 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStore.swift; sourceTree = "<group>"; };
 		6787A58DC5832483BA6571BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPeopleView.swift; sourceTree = "<group>"; };
 		6DB3A25D737D6245F65F7922 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOverviewView.swift; sourceTree = "<group>"; };
 		7575BA20FCB5A626E57AF50A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookView.swift; sourceTree = "<group>"; };
 		824BEF4A4B9216B2FFE6641B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRecordView.swift; sourceTree = "<group>"; };
 		85D017029B62617BDB7B88DD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		86EF6B706A9B7E29825F4AC3 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSheet.swift; sourceTree = "<group>"; };
 		8A8AAFDACD85384BB1BBAB08 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClassesView.swift; sourceTree = "<group>"; };
+		8E03ECA1C3E25895AE41905C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeComponents.swift; sourceTree = "<group>"; };
 		93964F97BDD2D0403D2FD6BB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
 		943206E52509834B95FB1E45 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistrar.swift; sourceTree = "<group>"; };
 		95391EF517F9B4D3E2C619AD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
@@ -151,6 +158,7 @@
 		E8D0BA82612FAFD2766F8C2A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		EAEEB10F7115B823BFF3D666 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
 		F04C735EA8DE2AB1F59381FA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		F8F9E24DB5585D2CCFB53E71 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModels.swift; sourceTree = "<group>"; };
 		FA8866A16C892D62E7388421 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -192,6 +200,7 @@
 		1587E48D14C3C9A75FA25982 = {
 			isa = PBXGroup;
 			children = (
+				DACC35D7887C6EC5BE1CD8E0,
 				F04C735EA8DE2AB1F59381FA,
 				3F3DF48B63A39E2E81143125,
 				95391EF517F9B4D3E2C619AD,
@@ -388,8 +397,19 @@
 				32E437DF02C185210D55901B,
 				071CDDEA96AC722680D03E81,
 				36304E25C54228E547869F83,
+				86EF6B706A9B7E29825F4AC3,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		DACC35D7887C6EC5BE1CD8E0 = {
+			isa = PBXGroup;
+			children = (
+				8E03ECA1C3E25895AE41905C,
+				F8F9E24DB5585D2CCFB53E71,
+				65F708F5F0745EF4275F9C01,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		E8518B65A2360588DD7BDD05 = {
@@ -540,6 +560,7 @@
 				F02E1834770837AC4CC56A25,
 				2742A2A724E2A9F42601AF84,
 				FA126DEC093EFF19F7C05AFA,
+				FC58F0338BAD2070355DE630,
 				9E810687338562087EE0B8BE,
 				F6F59B9F07DBBB12AFED9C1A,
 				6E31D3F4719EE750686626D0,
@@ -574,6 +595,9 @@
 				303B8DF59392995B29E5E9B3,
 				AF3D32A41E6470DABDFFA790,
 				713B2BC3CA2667EDECC05FDB,
+				48F7A0607EF3032BBF8FB801,
+				07B510F772119C37755B38B4,
+				ED7F068F3779E03A3B676AF9,
 				A7D7BA8DB3B5754F91EF4A45,
 				5C103D4C4479248F44D0B443,
 				CF3F098317B53FED3646BE88,

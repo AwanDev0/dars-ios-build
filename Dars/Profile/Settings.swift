@@ -68,46 +68,106 @@ struct LockGate<Content: View>: View {
     @Environment(\.scenePhase) private var phase
     @State private var locked = false
     @State private var asking = false
+    @State private var failed = false
+    @State private var shielded = false
     @ViewBuilder var content: Content
 
     var body: some View {
         ZStack {
             content
-                .blur(radius: locked ? 18 : 0)
                 .allowsHitTesting(!locked)
             if locked {
-                lockScreen.transition(.opacity)
+                LockScreen(failed: failed) { Task { await unlock() } }
+                    .transition(.opacity)
+            }
+            if shielded && !locked {
+                PrivacyShield()
+                    .transition(.opacity.animation(Motion.standard))
             }
         }
-        .animation(Motion.symmetric, value: locked)
-        .onAppear { if settings.lockEnabled { locked = true; Task { await unlock() } } }
+        .animation(Motion.standard, value: locked)
+        .onAppear {
+            if settings.lockEnabled {
+                locked = true
+                Task {
+                    try? await Task.sleep(for: .milliseconds(350))
+                    await unlock()
+                }
+            }
+        }
         .onChange(of: phase) { _, new in
-            guard settings.lockEnabled else { return }
+            guard settings.lockEnabled else {
+                shielded = false
+                return
+            }
             if new == .background { locked = true }
-            if new == .active, locked, !asking { Task { await unlock() } }
+            shielded = new != .active
+            if new == .active, locked, !asking {
+                Task {
+                    try? await Task.sleep(for: .milliseconds(350))
+                    await unlock()
+                }
+            }
         }
-    }
-
-    private var lockScreen: some View {
-        VStack(spacing: Metrics.Space.lg) {
-            Spacer()
-            Image(systemName: SettingsStore.biometry.symbol).font(.system(size: 54, weight: .light)).foregroundStyle(DarsColor.accent)
-            Text("Dars is locked").darsType(.title2).foregroundStyle(DarsColor.labelPrimary)
-            Spacer()
-            DarsButton(title: "Unlock", kind: .primary, systemImage: "lock.open", fullWidth: true) { Task { await unlock() } }
-                .padding(.horizontal, Metrics.Space.lg)
-                .padding(.bottom, Metrics.Space.xl)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(DarsColor.backgroundBase.opacity(0.6).ignoresSafeArea())
     }
 
     private func unlock() async {
+        guard !asking else { return }
         asking = true
+        failed = false
         defer { asking = false }
-        if await SettingsStore.authenticate(reason: "Unlock Dars") {
+        if await SettingsStore.authenticate(reason: L("lock_subtitle")) {
             HapticEngine.play(.success)
             locked = false
+        } else {
+            failed = true
         }
+    }
+}
+
+struct LockScreen: View {
+    let failed: Bool
+    let onUnlock: () -> Void
+
+    var body: some View {
+        VStack(spacing: 16) {
+            HeroMark()
+                .darsEnterHero()
+            Text(verbatim: L("lock_locked"))
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Tokens.text)
+                .darsEnter()
+            Text(verbatim: L("lock_subtitle"))
+                .font(.system(size: 13))
+                .foregroundStyle(Tokens.textMuted)
+                .multilineTextAlignment(.center)
+                .darsEnter()
+            if failed {
+                Text(verbatim: L("lock_failed"))
+                    .font(.system(size: 13))
+                    .foregroundStyle(Tokens.danger)
+                    .multilineTextAlignment(.center)
+            }
+            MotionButton(title: LocalizedStringKey(L("lock_unlock")), action: onUnlock)
+                .darsEnter()
+        }
+        .padding(32)
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Tokens.bg.ignoresSafeArea())
+    }
+}
+
+struct PrivacyShield: View {
+    var body: some View {
+        VStack(spacing: 18) {
+            HeroMark()
+            Text(verbatim: L("lock_locked"))
+                .font(.system(size: 17, weight: .semibold))
+                .foregroundStyle(Tokens.text)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Tokens.bg.ignoresSafeArea())
+        .contentShape(Rectangle())
+        .onTapGesture {}
     }
 }

@@ -6,6 +6,7 @@ struct ShellView: View {
     @State private var selected = "home"
     @State private var visited: Set<String> = ["home"]
     @State private var barHidden = false
+    @AppStorage("dars.welcomed") private var welcomed = false
     @State private var teacher = TeacherStore()
     @Environment(PushRegistrar.self) private var push
 
@@ -38,7 +39,25 @@ struct ShellView: View {
                 }
             }
         }
+        .overlay {
+            if !welcomed {
+                WelcomePage(role: profile.role) {
+                    withAnimation(Motion.standard) { welcomed = true }
+                }
+                .transition(.asymmetric(
+                    insertion: .opacity.combined(with: .offset(y: 40)).animation(Motion.emphasis),
+                    removal: .opacity.animation(Motion.standard)
+                ))
+            }
+        }
         .environment(teacher)
+        .environment(\.openTab, OpenTabAction { id in
+            if let tab = tabs.first(where: { $0.id == id }) { select(tab) }
+        })
+        .task {
+            await push.refreshStatus()
+            if !push.asked { await push.ask() }
+        }
         .task {
             if profile.role == .teacher { await teacher.load(me: profile) }
         }
