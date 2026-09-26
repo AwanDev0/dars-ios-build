@@ -23,17 +23,17 @@ struct ShellView: View {
                     pages
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .safeAreaInset(edge: .bottom, spacing: 0) {
-                            Color.clear.frame(height: barHidden ? 0 : 66)
+                            Color.clear.frame(height: barHidden ? 0 : 84)
                         }
                     if !barHidden {
-                        CapsuleTabBar(tabs: tabs, selected: $selected)
+                        DarsTabBar(tabs: tabs, selected: selected) { select($0) }
                             .transition(.move(edge: .bottom).combined(with: .opacity))
                     }
                 }
                 .background(DarsColor.backgroundBase.ignoresSafeArea())
                 .onPreferenceChange(HidesTabBarKey.self) { hidden in
                     Task { @MainActor in
-                        withAnimation(Motion.decelerate) { barHidden = hidden }
+                        withAnimation(hidden ? Motion.standard : Motion.arrive) { barHidden = hidden }
                     }
                 }
             }
@@ -127,45 +127,17 @@ struct ShellView: View {
         }
     }
 
-    private var tabs: [DarsTab] {
-        switch profile.role {
-        case .student:
-            return [
-                DarsTab(id: "home", title: "Home", symbol: "house", selectedSymbol: "house.fill"),
-                DarsTab(id: "schedule", title: "Schedule", symbol: "calendar", selectedSymbol: "calendar"),
-                DarsTab(id: "work", title: "Work", symbol: "text.book.closed", selectedSymbol: "text.book.closed.fill"),
-                DarsTab(id: "marks", title: "Marks", symbol: "chart.bar", selectedSymbol: "chart.bar.fill"),
-                DarsTab(id: "messages", title: "Chat", symbol: "bubble.left", selectedSymbol: "bubble.left.fill"),
-                DarsTab(id: "profile", title: "Profile", symbol: "person.circle", selectedSymbol: "person.circle.fill"),
-            ]
-        case .parent:
-            return [
-                DarsTab(id: "home", title: "Children", symbol: "figure.2.and.child.holdinghands", selectedSymbol: "figure.2.and.child.holdinghands"),
-                DarsTab(id: "messages", title: "Chat", symbol: "bubble.left", selectedSymbol: "bubble.left.fill"),
-                DarsTab(id: "profile", title: "Profile", symbol: "person.circle", selectedSymbol: "person.circle.fill"),
-            ]
-        case .teacher:
-            return [
-                DarsTab(id: "home", title: "Home", symbol: "house", selectedSymbol: "house.fill"),
-                DarsTab(id: "classes", title: "Classes", symbol: "books.vertical", selectedSymbol: "books.vertical.fill"),
-                DarsTab(id: "post", title: "Post", symbol: "plus.circle", selectedSymbol: "plus.circle.fill"),
-                DarsTab(id: "messages", title: "Chat", symbol: "bubble.left", selectedSymbol: "bubble.left.fill"),
-                DarsTab(id: "profile", title: "Profile", symbol: "person.circle", selectedSymbol: "person.circle.fill"),
-            ]
-        case .admin:
-            return [
-                DarsTab(id: "home", title: "Overview", symbol: "chart.bar", selectedSymbol: "chart.bar.fill"),
-                DarsTab(id: "people", title: "People", symbol: "person.2", selectedSymbol: "person.2.fill"),
-                DarsTab(id: "classes", title: "Classes", symbol: "books.vertical", selectedSymbol: "books.vertical.fill"),
-                DarsTab(id: "messages", title: "Chat", symbol: "bubble.left", selectedSymbol: "bubble.left.fill"),
-                DarsTab(id: "profile", title: "Profile", symbol: "person.circle", selectedSymbol: "person.circle.fill"),
-            ]
-        }
+    private var tabs: [DarsTabItem] { RoleTabs.of(profile.role) }
+
+    private func select(_ tab: DarsTabItem) {
+        guard tab.id != selected else { return }
+        HapticEngine.play(.selection)
+        withAnimation(Motion.tab) { selected = tab.id }
     }
 }
 
 struct TabPlaceholder: View {
-    let title: LocalizedStringKey
+    let title: String
     var body: some View {
         ContentUnavailableView {
             Label(title, systemImage: "hammer")

@@ -42,10 +42,12 @@ final class LanguageStore {
             let preferred = Locale.preferredLanguages.first ?? "en"
             language = preferred.hasPrefix("ckb") ? .sorani : .english
         }
+        Lang.current = language
     }
 
     func set(_ new: AppLanguage) {
         guard new != language else { return }
+        Lang.current = new
         language = new
         UserDefaults.standard.set(new.rawValue, forKey: Self.storageKey)
     }

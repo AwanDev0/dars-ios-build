@@ -23,6 +23,7 @@ struct DarsApp: App {
                 .environment(push)
                 .preferredColorScheme(settings.mode.colorScheme)
                 .darsLanguage(language.language)
+                .id(language.language)
                 .tint(DarsColor.accent)
         }
     }

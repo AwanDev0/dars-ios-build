@@ -27,6 +27,8 @@
 		4FE8AFE5E3867F786F7A0B9B = {isa = PBXBuildFile; fileRef = 1AC40726BF043E117635D04A; };
 		5C103D4C4479248F44D0B443 = {isa = PBXBuildFile; fileRef = 3F3DF48B63A39E2E81143125; };
 		634BADC30EE6520FE83690F6 = {isa = PBXBuildFile; productRef = 44E912A848E83FFCF821E463; };
+		64CC547D713814FD91028241 = {isa = PBXBuildFile; fileRef = 957A2D2265CD01AE3E583A67; };
+		6B1EDF2ECC5E415CFD44AB71 = {isa = PBXBuildFile; fileRef = C148873C8CF99B98C217EC55; };
 		6E31D3F4719EE750686626D0 = {isa = PBXBuildFile; fileRef = 14641630C5D7F3BDD58EA1ED; };
 		6EEEF6A3DD777728AF89E10B = {isa = PBXBuildFile; fileRef = 7575BA20FCB5A626E57AF50A; };
 		713B2BC3CA2667EDECC05FDB = {isa = PBXBuildFile; fileRef = 3B2EAF97E03D10C9161E5236; };
@@ -53,12 +55,15 @@
 		BF749A630745F35C3CFF3659 = {isa = PBXBuildFile; fileRef = C3A8BA57E0E674110ED05E0C; };
 		C9FF6D7029426FA980F60111 = {isa = PBXBuildFile; fileRef = C023AEDC3C57E76E638952BA; };
 		CA8E68A56D24F49DF8A5E64E = {isa = PBXBuildFile; fileRef = 143AF8596C96A65F8E529991; };
+		CAE7D984BDFDB57449BE2FC2 = {isa = PBXBuildFile; fileRef = 4536D5440B016E3E5E4C8135; };
 		CB8A675D2C6484486FB314C4 = {isa = PBXBuildFile; fileRef = D83EF12AD95FCF73428A15F5; };
 		CCF267542C59AE6D8C345EE0 = {isa = PBXBuildFile; fileRef = C349CE48EE08998A366F1D21; };
 		CF3F098317B53FED3646BE88 = {isa = PBXBuildFile; fileRef = 95391EF517F9B4D3E2C619AD; };
+		D081487E8A77F1A6AB634088 = {isa = PBXBuildFile; fileRef = 4A86EA9BC745FDCB433EB4D2; };
 		D24E0DF53A3709949BB5955C = {isa = PBXBuildFile; fileRef = 033BE919AEEA15AF7BC5B5DF; };
 		D9FF878CF14BC5D68EDDD7DD = {isa = PBXBuildFile; fileRef = A56B0CD00C40A505723FBC83; };
 		E3343957EDB095342C88DF0A = {isa = PBXBuildFile; fileRef = 5838192D12AFB7A10EFE72A9; };
+		E4129B7A75F30047F18DAF45 = {isa = PBXBuildFile; fileRef = 63B80F6851CE345C2CB9873E; };
 		ED01BB029C3E109FA236B769 = {isa = PBXBuildFile; fileRef = CA33E6B461369E960BFCFE92; };
 		F02E1834770837AC4CC56A25 = {isa = PBXBuildFile; fileRef = 32E437DF02C185210D55901B; };
 		F2DDD575D7B2C5757527E627 = {isa = PBXBuildFile; fileRef = 45421DE0905CA8932EB2A183; };
@@ -89,14 +94,17 @@
 		3EE5089F53C27BB2002E3881 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentHomeView.swift; sourceTree = "<group>"; };
 		3F3DF48B63A39E2E81143125 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksView.swift; sourceTree = "<group>"; };
 		4126EB1C9BE3C2EE189012D5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		4536D5440B016E3E5E4C8135 = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45421DE0905CA8932EB2A183 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStore.swift; sourceTree = "<group>"; };
 		484AA59FDC2615C86DFD34F7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsData.swift; sourceTree = "<group>"; };
+		4A86EA9BC745FDCB433EB4D2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialIcons.swift; sourceTree = "<group>"; };
 		4EB52EDCF982AF555696EB7B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		52E5FB495DDDE4B2CB4978B5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsMetrics.swift; sourceTree = "<group>"; };
 		5760CACAF292B21BB66827B1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReviewView.swift; sourceTree = "<group>"; };
 		5838192D12AFB7A10EFE72A9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStates.swift; sourceTree = "<group>"; };
 		62A74BDA73152A8885050E15 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bits.swift; sourceTree = "<group>"; };
 		6390850025AC0CAAA3770860 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		63B80F6851CE345C2CB9873E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kit.swift; sourceTree = "<group>"; };
 		6787A58DC5832483BA6571BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPeopleView.swift; sourceTree = "<group>"; };
 		6DB3A25D737D6245F65F7922 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOverviewView.swift; sourceTree = "<group>"; };
 		7575BA20FCB5A626E57AF50A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookView.swift; sourceTree = "<group>"; };
@@ -106,6 +114,7 @@
 		93964F97BDD2D0403D2FD6BB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
 		943206E52509834B95FB1E45 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistrar.swift; sourceTree = "<group>"; };
 		95391EF517F9B4D3E2C619AD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		957A2D2265CD01AE3E583A67 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		9C3A82923C76B663159B1A01 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F850A3C362814A78B6D787A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherClassesView.swift; sourceTree = "<group>"; };
 		9F98D713DA9EAE93F279602D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminScheduleView.swift; sourceTree = "<group>"; };
@@ -119,6 +128,7 @@
 		BB4D2C86D2EA43166F69F2AC = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersView.swift; sourceTree = "<group>"; };
 		BBE5073327448458C9DBCF27 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabBar.swift; sourceTree = "<group>"; };
 		C023AEDC3C57E76E638952BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		C148873C8CF99B98C217EC55 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsTabBar.swift; sourceTree = "<group>"; };
 		C349CE48EE08998A366F1D21 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsColor.swift; sourceTree = "<group>"; };
 		C3A8BA57E0E674110ED05E0C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
 		C7C997B9132CB1A48A11EF42 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
@@ -213,8 +223,17 @@
 				1587E48D14C3C9A75FA25982,
 				CC2931240EAD30BFAE7627BA,
 				10FCA5E1D813E22BDD6534DA,
+				4536D5440B016E3E5E4C8135,
 				3BE8AEAB71D1FBD2D210FD9C,
 			);
+			sourceTree = "<group>";
+		};
+		2612F4E407BFF3DEA3F398B6 = {
+			isa = PBXGroup;
+			children = (
+				4A86EA9BC745FDCB433EB4D2,
+			);
+			path = Icons;
 			sourceTree = "<group>";
 		};
 		263F5CE23F98E683A31D03CE = {
@@ -233,6 +252,7 @@
 			children = (
 				D83EF12AD95FCF73428A15F5,
 				143AF8596C96A65F8E529991,
+				957A2D2265CD01AE3E583A67,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -241,10 +261,20 @@
 			isa = PBXGroup;
 			children = (
 				3BCF2F662E915EAF1159CA91,
+				2612F4E407BFF3DEA3F398B6,
+				35F1B024A6E02D17715EE313,
 				37EC9882E6E1839CD2F32D46,
 				AC7ACC2C9ADFE6D23F8AC529,
 			);
 			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		35F1B024A6E02D17715EE313 = {
+			isa = PBXGroup;
+			children = (
+				63B80F6851CE345C2CB9873E,
+			);
+			path = Kit;
 			sourceTree = "<group>";
 		};
 		37EC9882E6E1839CD2F32D46 = {
@@ -333,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE5073327448458C9DBCF27,
+				C148873C8CF99B98C217EC55,
 				1AC40726BF043E117635D04A,
 			);
 			path = Navigation;
@@ -466,6 +497,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA8E68A56D24F49DF8A5E64E,
+				CAE7D984BDFDB57449BE2FC2,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,14 +531,18 @@
 				8D6627B140D86EE1B838BF31,
 				CCF267542C59AE6D8C345EE0,
 				C9FF6D7029426FA980F60111,
+				D081487E8A77F1A6AB634088,
+				E4129B7A75F30047F18DAF45,
 				FA3465B1846D717003361343,
 				F8F49E7B014712CCE0951354,
 				1718FDBBC303AA000CD17079,
 				CB8A675D2C6484486FB314C4,
+				64CC547D713814FD91028241,
 				796C8EFB00E51F108C24E3AD,
 				0476A05972EC595F0ECDBEFF,
 				A7B8317541B994B994421BE1,
 				85578B7E6BEB0A90B19BBD25,
+				6B1EDF2ECC5E415CFD44AB71,
 				4FE8AFE5E3867F786F7A0B9B,
 				2393D81E534212D186464B22,
 				F7A886492E55589D2A1E0DAF,
@@ -578,6 +614,7 @@
 		32DD3E44BA5860B5625474B4 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
@@ -616,6 +653,7 @@
 		3D15738E92761E8363B6AAB8 = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;

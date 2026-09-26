@@ -22,20 +22,31 @@ enum DarsColor {
     static var surfaceGrouped: Color { dynamic(light: palette.lightCardAlt, dark: palette.darkCardAlt) }
     static var surfaceRaised: Color { dynamic(light: 0xFFFFFF, dark: palette.darkRaised) }
 
-    static let labelPrimary = dynamic(light: 0x000000, dark: 0xFFFFFF)
+    static let labelPrimary = dynamic(light: 0x1C1C1E, dark: 0xFFFFFF)
     static let labelSecondary = dynamicRGBA(
-        light: (0, 0, 0, 0.56),
-        dark:  (1, 1, 1, 0.62)
+        light: (0, 0, 0, 0.58),
+        dark:  (1, 1, 1, 0.58)
     )
     static let labelTertiary = dynamicRGBA(
-        light: (0, 0, 0, 0.38),
-        dark:  (1, 1, 1, 0.32)
+        light: (0, 0, 0, 0.54),
+        dark:  (1, 1, 1, 0.45)
+    )
+    static let labelFaint = dynamicRGBA(
+        light: (0, 0, 0, 0.18),
+        dark:  (1, 1, 1, 0.18)
     )
 
     static let separator = dynamicRGBA(
         light: (0.235, 0.235, 0.263, 0.10),
-        dark:  (1, 1, 1, 0.07)
+        dark:  (1, 1, 1, 0.12)
     )
+
+    static let well = dynamicRGBA(
+        light: (0.235, 0.235, 0.263, 0.07),
+        dark:  (1, 1, 1, 0.06)
+    )
+
+    static var onAction: Color { Color.white }
 
     static let danger = dynamic(light: 0xD70015, dark: 0xFF3B30)
     static let warning = dynamic(light: 0xB25000, dark: 0xFF9500)
@@ -81,4 +92,27 @@ private extension UIColor {
             alpha: 1
         )
     }
+}
+
+enum Tokens {
+    static var bg: Color { DarsColor.backgroundBase }
+    static var card: Color { DarsColor.surface }
+    static var cardAlt: Color { DarsColor.surfaceGrouped }
+    static var raised: Color { DarsColor.surfaceRaised }
+    static var text: Color { DarsColor.labelPrimary }
+    static var textSub: Color { DarsColor.labelSecondary }
+    static var textMuted: Color { DarsColor.labelTertiary }
+    static var textFaint: Color { DarsColor.labelFaint }
+    static var border: Color { DarsColor.separator }
+    static var accent: Color { DarsColor.accent }
+    static var accentText: Color { DarsColor.accentLabel }
+    static var accentSoft: Color { DarsColor.accentSoft }
+    static var onAccent: Color { DarsColor.onAccent }
+    static var danger: Color { DarsColor.danger }
+    static var warning: Color { DarsColor.warning }
+    static var success: Color { DarsColor.success }
+    static var action: Color { DarsColor.action }
+    static var onAction: Color { DarsColor.onAction }
+    static var well: Color { DarsColor.well }
+    static let gold = Color(hex: 0xFAB900)
 }
