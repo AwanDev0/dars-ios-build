@@ -2,6 +2,7 @@ import SwiftUI
 
 struct RootView: View {
     @Environment(AuthStore.self) private var auth
+    @Environment(OpeningState.self) private var opening
 
     var body: some View {
         Group {
@@ -24,6 +25,9 @@ struct RootView: View {
         }
         .animation(Motion.symmetric, value: auth.state)
         .task { auth.start() }
+        .onChange(of: auth.state, initial: true) { _, now in
+            if now != .restoring { opening.resolved = true }
+        }
         .onChange(of: auth.profile?.id) { _, id in
             PushRegistrar.shared.sessionChanged(signedIn: id != nil)
         }

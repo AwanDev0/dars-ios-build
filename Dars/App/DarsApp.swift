@@ -13,9 +13,13 @@ struct DarsApp: App {
 
     private let push = PushRegistrar.shared
 
+    @State private var opening = OpeningState()
+
     var body: some Scene {
         WindowGroup {
             LockGate { RootView() }
+                .overlay { OpeningOverlay() }
+                .environment(opening)
                 .environment(auth)
                 .environment(language)
                 .environment(palettes)

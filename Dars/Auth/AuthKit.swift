@@ -547,7 +547,8 @@ struct CreditLine: View {
 }
 
 struct HeroMark: View {
-    var shine: Bool = false
+    var reportsFrame = false
+    @Environment(OpeningState.self) private var opening: OpeningState?
     @Environment(\.accessibilityReduceMotion) private var reduce
     @State private var arrival: CGFloat = 0
     @State private var wobble: Double = 0
@@ -573,6 +574,10 @@ struct HeroMark: View {
         }
         .frame(width: 96, height: 96)
         .clipShape(RR(26))
+        .onGeometryChange(for: CGRect.self) { $0.frame(in: .global) } action: { frame in
+            if reportsFrame { opening?.mark = frame }
+        }
+        .opacity(reportsFrame && opening?.playing == true ? 0 : 1)
         .rotationEffect(.degrees(wobble + spin))
         .accessibilityLabel(Text(verbatim: L("app_name")))
         .onLongPressGesture(minimumDuration: 0.4) {
@@ -592,8 +597,8 @@ struct HeroMark: View {
                 }
             }
         }
-        .onChange(of: shine) { _, now in
-            guard now, !reduce else { return }
+        .onChange(of: opening?.landed ?? false) { _, now in
+            guard now, reportsFrame, !reduce else { return }
             arrival = 0
             withAnimation(.timingCurve(0.45, 0, 0.55, 1, duration: 0.7)) { arrival = 1 }
         }
@@ -648,7 +653,7 @@ struct LoginBackdrop: View {
         for i in 0...steps {
             let deg = start + sweep * Double(i) / Double(steps)
             let rad = deg * .pi / 180
-            let point = CGPoint(x: box.midX + box.width / 2 * cos(rad), y: box.midY + box.height / 2 * sin(rad))
+            let point = CGPoint(x: box.midX + box.width / 2 * CGFloat(cos(rad)), y: box.midY + box.height / 2 * CGFloat(sin(rad)))
             if i == 0 { path.move(to: point) } else { path.addLine(to: point) }
         }
         return path
@@ -661,8 +666,8 @@ struct LoginBackdrop: View {
         let float = sin(2 * .pi * t / 7_000)
         let lean = sin(2 * .pi * t / 17_000)
         let travel = (t / 9_000).truncatingRemainder(dividingBy: 1)
-        let dx = 6 * breathe
-        let dy = 4 * breathe
+        let dx = CGFloat(6 * breathe)
+        let dy = CGFloat(4 * breathe)
 
         let band = CGRect(x: w * 0.12 + dx, y: -h * 0.55 + dy, width: w * 1.30, height: h * 1.55)
         let bandStart = 120 + 3 * breathe
@@ -683,7 +688,7 @@ struct LoginBackdrop: View {
             let at = bandStart - run / 2 + (bandSweep + run) * travel
             func onBand(_ deg: Double) -> CGPoint {
                 let rad = deg * .pi / 180
-                return CGPoint(x: band.midX + band.width / 2 * cos(rad), y: band.midY + band.height / 2 * sin(rad))
+                return CGPoint(x: band.midX + band.width / 2 * CGFloat(cos(rad)), y: band.midY + band.height / 2 * CGFloat(sin(rad)))
             }
             ctx.stroke(
                 arc(band, start: at, sweep: run),
@@ -697,7 +702,7 @@ struct LoginBackdrop: View {
             with: .linearGradient(Gradient(colors: [warm(0.55), rim(0.70)]), startPoint: CGPoint(x: w * 0.3, y: h * 0.5), endPoint: CGPoint(x: w, y: h * 0.2)),
             style: StrokeStyle(lineWidth: w * 0.13, lineCap: .round)
         )
-        let sphere = CGPoint(x: w * 0.86, y: h * 0.24 + 5 * float)
+        let sphere = CGPoint(x: w * 0.86, y: h * 0.24 + CGFloat(5 * float))
         let r = w * 0.20
         ctx.fill(
             Path(ellipseIn: CGRect(x: sphere.x - r, y: sphere.y - r, width: r * 2, height: r * 2)),
@@ -768,9 +773,12 @@ struct LoginWhimsy: View {
                 let p = (CGFloat(progress) - r1 * 0.5) / 0.55
                 guard p >= 0, p <= 1 else { continue }
                 let side = 26 + 22 * r2
-                let x = w * (0.05 + 0.9 * r3) + sin(2 * .pi * (p * 1.5 + r2)) * 14
+                let sway: CGFloat = sin(2 * .pi * (p * 1.5 + r2)) * 14
+                let x: CGFloat = w * (0.05 + 0.9 * r3) + sway
                 let y = -side + (h + side * 2) * p
-                let alpha = min(max((raining ? 0.10 : 0.06) * max(min(sin(.pi * p), 1), 0) * 2, 0), 0.12)
+                let base: CGFloat = raining ? 0.10 : 0.06
+                let wave: CGFloat = max(min(sin(.pi * p), 1), 0)
+                let alpha: CGFloat = min(max(base * wave * 2, 0), 0.12)
                 let degrees = -25 + 50 * r1 + 40 * p * (r2 > 0.5 ? 1 : -1)
                 var layer = ctx
                 layer.translateBy(x: x + side / 2, y: y + side / 2)
@@ -843,31 +851,36 @@ private struct SunMoon: View, Animatable {
     }
 
     var body: some View {
-        Canvas { ctx, size in
-            let n = min(max(night, 0), 1.15)
-            let m = min(size.width, size.height)
-            let c = CGPoint(x: size.width / 2, y: size.height / 2)
-            let colour = mix(Tokens.gold, ink, min(max(n, 0), 1))
-            let r = m * (0.22 + 0.09 * n)
-            let rayLen = m * 0.13 * min(max(1 - n, 0), 1)
-            ctx.drawLayer { layer in
-                if rayLen > 0.5 {
-                    let inner = m * 0.34
-                    for i in 0..<8 {
-                        let a = (Double(i) * 45 + 45 * Double(n)) * .pi / 180
-                        var line = Path()
-                        line.move(to: CGPoint(x: c.x + cos(a) * inner, y: c.y + sin(a) * inner))
-                        line.addLine(to: CGPoint(x: c.x + cos(a) * (inner + rayLen), y: c.y + sin(a) * (inner + rayLen)))
-                        layer.stroke(line, with: .color(colour), style: StrokeStyle(lineWidth: m * 0.085, lineCap: .round))
-                    }
+        Canvas { ctx, size in render(ctx: ctx, size: size) }
+    }
+
+    private func render(ctx: GraphicsContext, size: CGSize) {
+        let n: CGFloat = min(max(night, 0), 1.15)
+        let m: CGFloat = min(size.width, size.height)
+        let c = CGPoint(x: size.width / 2, y: size.height / 2)
+        let colour: Color = mix(Tokens.gold, ink, min(max(n, 0), 1))
+        let r: CGFloat = m * (0.22 + 0.09 * n)
+        let rayLen: CGFloat = m * 0.13 * min(max(1 - n, 0), 1)
+        ctx.drawLayer { layer in
+            if rayLen > 0.5 {
+                let inner: CGFloat = m * 0.34
+                for i in 0..<8 {
+                    let degrees: Double = Double(i) * 45 + 45 * Double(n)
+                    let a: Double = degrees * Double.pi / 180
+                    let dx = CGFloat(cos(a))
+                    let dy = CGFloat(sin(a))
+                    var line = Path()
+                    line.move(to: CGPoint(x: c.x + dx * inner, y: c.y + dy * inner))
+                    line.addLine(to: CGPoint(x: c.x + dx * (inner + rayLen), y: c.y + dy * (inner + rayLen)))
+                    layer.stroke(line, with: .color(colour), style: StrokeStyle(lineWidth: m * 0.085, lineCap: .round))
                 }
-                layer.fill(Path(ellipseIn: CGRect(x: c.x - r, y: c.y - r, width: r * 2, height: r * 2)), with: .color(colour))
-                if n > 0.02 {
-                    let bite = CGPoint(x: c.x + m * (0.42 - 0.20 * n), y: c.y - m * (0.42 - 0.22 * n))
-                    let br = r * 0.92
-                    layer.blendMode = .clear
-                    layer.fill(Path(ellipseIn: CGRect(x: bite.x - br, y: bite.y - br, width: br * 2, height: br * 2)), with: .color(.black))
-                }
+            }
+            layer.fill(Path(ellipseIn: CGRect(x: c.x - r, y: c.y - r, width: r * 2, height: r * 2)), with: .color(colour))
+            if n > 0.02 {
+                let bite = CGPoint(x: c.x + m * (0.42 - 0.20 * n), y: c.y - m * (0.42 - 0.22 * n))
+                let br: CGFloat = r * 0.92
+                layer.blendMode = .clear
+                layer.fill(Path(ellipseIn: CGRect(x: bite.x - br, y: bite.y - br, width: br * 2, height: br * 2)), with: .color(.black))
             }
         }
     }

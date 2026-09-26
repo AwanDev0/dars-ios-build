@@ -98,16 +98,20 @@ private struct DarsEnter: ViewModifier {
     let delay: Double
     let rise: CGFloat
     @Environment(\.accessibilityReduceMotion) private var reduce
+    @Environment(\.openingCue) private var cue
     @State private var shown = false
 
     func body(content: Content) -> some View {
         content
             .opacity(shown || reduce ? 1 : 0)
             .offset(y: shown || reduce ? 0 : rise)
-            .onAppear {
-                guard !shown, !reduce else { return }
-                withAnimation(Motion.arrive.delay(delay)) { shown = true }
-            }
+            .onAppear { start() }
+            .onChange(of: cue) { _, _ in start() }
+    }
+
+    private func start() {
+        guard cue, !shown, !reduce else { return }
+        withAnimation(Motion.arrive.delay(delay)) { shown = true }
     }
 }
 
@@ -439,8 +443,12 @@ struct ScreenTitleBar<Actions: View>: View {
     @Environment(\.layoutDirection) private var direction
 
     var body: some View {
-        let shrink = reduce ? 0 : min(max(progress, 0), 1)
-        let scale = 1 - (1 - 17.0 / 28.0) * shrink
+        let shrink: CGFloat = reduce ? 0 : min(max(progress, 0), 1)
+        let scale: CGFloat = 1 - (1 - 17.0 / 28.0) * shrink
+        let subtitleAlpha: Double = Double(1 - min(shrink * 1.5, 1))
+        let subtitleScale: CGFloat = max(1 - shrink, 0.001)
+        let subtitleHeight: CGFloat = 16 * (1 - shrink)
+        let bottomPad: CGFloat = 8 - 4 * shrink
         VStack(spacing: 0) {
             HStack(alignment: .center, spacing: 10) {
                 VStack(alignment: .leading, spacing: 2) {
@@ -456,17 +464,17 @@ struct ScreenTitleBar<Actions: View>: View {
                             .font(.system(size: 12))
                             .foregroundStyle(Tokens.textMuted)
                             .lineLimit(1)
-                            .opacity(1 - min(shrink * 1.5, 1))
-                            .scaleEffect(x: 1, y: max(1 - shrink, 0.001), anchor: .top)
-                            .frame(height: 16 * (1 - shrink), alignment: .top)
+                            .opacity(subtitleAlpha)
+                            .scaleEffect(x: 1, y: subtitleScale, anchor: .top)
+                            .frame(height: subtitleHeight, alignment: .top)
                     }
                 }
                 actions
             }
             .padding(.horizontal, 20)
             .padding(.top, 10)
-            .padding(.bottom, 8 - 4 * shrink)
-            Rectangle().fill(Tokens.border.opacity(shrink)).frame(height: 0.5)
+            .padding(.bottom, bottomPad)
+            Rectangle().fill(Tokens.border.opacity(Double(shrink))).frame(height: 0.5)
         }
     }
 }

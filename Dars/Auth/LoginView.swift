@@ -12,8 +12,10 @@ struct LoginView: View {
     @Environment(SettingsStore.self) private var settings
     @Environment(\.colorScheme) private var scheme
     @Environment(\.accessibilityReduceMotion) private var reduce
+    @Environment(OpeningState.self) private var opening
 
     @State private var path: [AuthRoute] = []
+    @State private var delivered = false
     @State private var email = ""
     @State private var password = ""
     @State private var revealed = false
@@ -37,7 +39,7 @@ struct LoginView: View {
                 LoginWhimsy(request: whimsy).ignoresSafeArea()
                 ScrollView {
                     VStack(spacing: 0) {
-                        LoginHeader(collapse: keyboard ? 1 : 0)
+                        LoginHeader(collapse: keyboard ? 1 : 0, delivered: delivered)
                             .frame(maxWidth: .infinity)
                         AuthCard {
                             MotionSegmentedControl(
@@ -95,6 +97,8 @@ struct LoginView: View {
                 .darsEnter(rise: 0)
             }
             .toolbar(.hidden, for: .navigationBar)
+            .environment(\.openingCue, opening.cue)
+            .onAppear { delivered = opening.playing }
             .navigationDestination(for: AuthRoute.self) { route in
                 switch route {
                 case .student(let code): StudentSignInView(initialCode: code)
@@ -306,6 +310,7 @@ private struct JoinRowBody: View {
 
 private struct LoginHeader: View, Animatable {
     var collapse: CGFloat
+    var delivered = false
     var animatableData: CGFloat {
         get { collapse }
         set { collapse = newValue }
@@ -331,10 +336,10 @@ private struct LoginHeader: View, Animatable {
             let brandCompact = CGPoint(x: rtl ? width - markSmall - 12 - brandSmallW / 2 : markSmall + 12 + brandSmallW / 2, y: rowMid)
             let tagCompact = CGPoint(x: width / 2, y: rowMid)
             ZStack {
-                HeroMark()
+                HeroMark(reportsFrame: true)
                     .scaleEffect(1 - (1 - 40.0 / 96.0) * c)
                     .position(mix(markFull, markCompact, c))
-                    .darsEnterHero()
+                    .modifier(DarsEnterHero(skip: delivered))
                 (Text(verbatim: L("login_wordmark_a")) + Text(verbatim: L("login_wordmark_b")).foregroundColor(Tokens.gold))
                     .font(.system(size: 36, weight: .heavy))
                     .darsTracking(-1.4)
@@ -362,17 +367,21 @@ private struct LoginHeader: View, Animatable {
     }
 }
 
-private struct DarsEnterHero: ViewModifier {
+struct DarsEnterHero: ViewModifier {
+    var skip = false
     @Environment(\.accessibilityReduceMotion) private var reduce
+    @Environment(\.openingCue) private var cue
     @State private var shown = false
     func body(content: Content) -> some View {
         content
-            .opacity(shown || reduce ? 1 : 0)
-            .scaleEffect(shown || reduce ? 1 : 0.88)
-            .onAppear {
-                guard !shown, !reduce else { return }
-                withAnimation(Motion.arrive) { shown = true }
-            }
+            .opacity(shown || reduce || skip ? 1 : 0)
+            .scaleEffect(shown || reduce || skip ? 1 : 0.88)
+            .onAppear { start() }
+            .onChange(of: cue) { _, _ in start() }
+    }
+    private func start() {
+        guard cue, !shown, !reduce, !skip else { return }
+        withAnimation(Motion.arrive) { shown = true }
     }
 }
 

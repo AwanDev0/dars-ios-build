@@ -17,6 +17,7 @@
 		2742A2A724E2A9F42601AF84 = {isa = PBXBuildFile; fileRef = 071CDDEA96AC722680D03E81; };
 		275BD30C9092BCC0B2B7AAAD = {isa = PBXBuildFile; fileRef = B133E8B2DBE3E751CAC5F253; };
 		275C0A65233579C49A390E93 = {isa = PBXBuildFile; fileRef = 44BA088B578AD62DAC0815AD; };
+		276F17718CC250D3C50CE090 = {isa = PBXBuildFile; fileRef = E33542C130E117A84F370EB4; };
 		2B1C294F7B99CE4545F13D46 = {isa = PBXBuildFile; fileRef = C7C997B9132CB1A48A11EF42; };
 		303B8DF59392995B29E5E9B3 = {isa = PBXBuildFile; fileRef = D38AC4F609D234048A5C6750; };
 		3103AFDF4B9FA95E575D8DCE = {isa = PBXBuildFile; fileRef = E8D0BA82612FAFD2766F8C2A; };
@@ -146,6 +147,7 @@
 		D83EF12AD95FCF73428A15F5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStore.swift; sourceTree = "<group>"; };
 		DE0A961EF9BA5A7938108934 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsApp.swift; sourceTree = "<group>"; };
 		E171E12D8139D2910AA53AFE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposerView.swift; sourceTree = "<group>"; };
+		E33542C130E117A84F370EB4 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Opening.swift; sourceTree = "<group>"; };
 		E8D0BA82612FAFD2766F8C2A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		EAEEB10F7115B823BFF3D666 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
 		F04C735EA8DE2AB1F59381FA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				DE0A961EF9BA5A7938108934,
+				E33542C130E117A84F370EB4,
 				85D017029B62617BDB7B88DD,
 			);
 			path = App;
@@ -518,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA7935B0337EB7AD14A72237,
+				276F17718CC250D3C50CE090,
 				4F8CD9D0A7ED8FB8FD89607F,
 				4E3CA19D1A0DB61838167CBA,
 				BB356CFF8981EFFA668E0504,
@@ -632,6 +636,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CADisableMinimumFrameDurationOnPhone = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dars;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Dars uses the camera to scan class and family QR codes.";
@@ -640,7 +645,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dars needs access to your photos so you can share images in chats.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
@@ -671,6 +675,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_CADisableMinimumFrameDurationOnPhone = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Dars;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Dars uses the camera to scan class and family QR codes.";
@@ -679,7 +684,6 @@
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dars needs access to your photos so you can share images in chats.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
