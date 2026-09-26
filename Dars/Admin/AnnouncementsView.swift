@@ -176,6 +176,7 @@ struct AnnouncementComposerView: View {
         .background(DarsColor.backgroundBase.ignoresSafeArea())
         .navigationTitle("New announcement")
         .navigationBarTitleDisplayMode(.inline)
+        .hidesDarsTabBar()
         .task { classes = (try? await DarsData.allClasses()) ?? [] }
     }
 

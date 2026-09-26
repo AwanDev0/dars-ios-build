@@ -16,6 +16,7 @@
 		24B08B565CA0A165FA85CCC8 = {isa = PBXBuildFile; fileRef = 62A74BDA73152A8885050E15; };
 		275BD30C9092BCC0B2B7AAAD = {isa = PBXBuildFile; fileRef = B133E8B2DBE3E751CAC5F253; };
 		2B1C294F7B99CE4545F13D46 = {isa = PBXBuildFile; fileRef = C7C997B9132CB1A48A11EF42; };
+		303B8DF59392995B29E5E9B3 = {isa = PBXBuildFile; fileRef = D38AC4F609D234048A5C6750; };
 		3103AFDF4B9FA95E575D8DCE = {isa = PBXBuildFile; fileRef = E8D0BA82612FAFD2766F8C2A; };
 		39EC5CF68F09A8CB88F8C06A = {isa = PBXBuildFile; fileRef = 4EB52EDCF982AF555696EB7B; };
 		3A94A2F29820E6762845E7B2 = {isa = PBXBuildFile; fileRef = FA8866A16C892D62E7388421; };
@@ -124,6 +125,7 @@
 		CA33E6B461369E960BFCFE92 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSettingsView.swift; sourceTree = "<group>"; };
 		CC844D1CC1E047578DE8FDA7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
 		D0F13A5A6FD426BAB5A252A2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeView.swift; sourceTree = "<group>"; };
+		D38AC4F609D234048A5C6750 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curriculum.swift; sourceTree = "<group>"; };
 		D3D513886106536D5B7EBC07 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCardSheet.swift; sourceTree = "<group>"; };
 		D83EF12AD95FCF73428A15F5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStore.swift; sourceTree = "<group>"; };
 		DE0A961EF9BA5A7938108934 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsApp.swift; sourceTree = "<group>"; };
@@ -374,6 +376,7 @@
 				FAEA2AB6A87FC98ED9A156EE,
 				B133E8B2DBE3E751CAC5F253,
 				A56B0CD00C40A505723FBC83,
+				D38AC4F609D234048A5C6750,
 				D3D513886106536D5B7EBC07,
 				3B2EAF97E03D10C9161E5236,
 			);
@@ -516,6 +519,7 @@
 				E3343957EDB095342C88DF0A,
 				275BD30C9092BCC0B2B7AAAD,
 				D9FF878CF14BC5D68EDDD7DD,
+				303B8DF59392995B29E5E9B3,
 				AF3D32A41E6470DABDFFA790,
 				713B2BC3CA2667EDECC05FDB,
 				A7D7BA8DB3B5754F91EF4A45,

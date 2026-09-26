@@ -297,6 +297,7 @@ struct ThreadView: View {
         .navigationTitle(conversation.title)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar { threadToolbar }
+        .hidesDarsTabBar()
         .task { await store.open(conversation.id, me: me.id) }
         .onDisappear { store.close() }
         .sheet(isPresented: $showingInfo) {
