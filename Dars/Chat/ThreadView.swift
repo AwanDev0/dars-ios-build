@@ -303,7 +303,7 @@ struct ThreadView: View {
             ThreadInfoSheet(conversation: conversation, store: store, me: me)
         }
         .sheet(item: $editing) { m in
-            EditMessageSheet(text: m.body ?? "") { Task { await store.edit(m, to: $0) } }
+            EditMessageSheet(text: m.body ?? "") { text in Task { await store.edit(m, to: text) } }
         }
         .sheet(item: $reporting) { m in
             ReportSheet(what: "message") { reason, note in Task { await store.report(message: m, me: me.id, reason: reason, note: note) } }
