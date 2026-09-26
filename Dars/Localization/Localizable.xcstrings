@@ -1,0 +1,1832 @@
+{
+  "sourceLanguage": "en",
+  "version": "1.0",
+  "strings": {
+    "Absent": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئامادە نییە"
+          }
+        }
+      }
+    },
+    "Account": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هەژمار"
+          }
+        }
+      }
+    },
+    "Add a day off": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕۆژی پشوو زیاد بکە"
+          }
+        }
+      }
+    },
+    "Address": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناونیشان"
+          }
+        }
+      }
+    },
+    "Announcements": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕاگەیاندنەکان"
+          }
+        }
+      }
+    },
+    "App lock": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قوفڵی بەرنامە"
+          }
+        }
+      }
+    },
+    "Appearance": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕووکار"
+          }
+        }
+      }
+    },
+    "Attendance": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئامادەبوون"
+          }
+        }
+      }
+    },
+    "Block": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بلۆککردن"
+          }
+        }
+      }
+    },
+    "Blocked people": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کەسە بلۆککراوەکان"
+          }
+        }
+      }
+    },
+    "Break": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پشوو"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هەڵوەشاندنەوە"
+          }
+        }
+      }
+    },
+    "Change password": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "گۆڕینی وشەی نهێنی"
+          }
+        }
+      }
+    },
+    "Children": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "منداڵەکان"
+          }
+        }
+      }
+    },
+    "Class": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پۆل"
+          }
+        }
+      }
+    },
+    "Class code": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کۆدی پۆل"
+          }
+        }
+      }
+    },
+    "Classes": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پۆلەکان"
+          }
+        }
+      }
+    },
+    "Close": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "داخستن"
+          }
+        }
+      }
+    },
+    "Closed": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "داخراو"
+          }
+        }
+      }
+    },
+    "Colour": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕەنگ"
+          }
+        }
+      }
+    },
+    "Copy": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کۆپی"
+          }
+        }
+      }
+    },
+    "Copy this day": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لەبەرگرتنەوەی ئەم ڕۆژە"
+          }
+        }
+      }
+    },
+    "Create the account": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دروستکردنی هەژمار"
+          }
+        }
+      }
+    },
+    "Dars": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەرس"
+          }
+        }
+      }
+    },
+    "Dars is locked": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەرس قوفڵدراوە"
+          }
+        }
+      }
+    },
+    "Days off": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕۆژانی پشوو"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سڕینەوە"
+          }
+        }
+      }
+    },
+    "Delete my account": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سڕینەوەی هەژمارەکەم"
+          }
+        }
+      }
+    },
+    "Done": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تەواوبوو"
+          }
+        }
+      }
+    },
+    "Edit": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەستکاری"
+          }
+        }
+      }
+    },
+    "Edit family details": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەستکاریی زانیاریی خێزان"
+          }
+        }
+      }
+    },
+    "Edit profile": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەستکاریکردنی پڕۆفایل"
+          }
+        }
+      }
+    },
+    "Email": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئیمەیڵ"
+          }
+        }
+      }
+    },
+    "Email (optional)": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئیمەیڵ (ئارەزوومەندانە)"
+          }
+        }
+      }
+    },
+    "Enter marks": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نمرە بنووسە"
+          }
+        }
+      }
+    },
+    "Exam day": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕۆژی تاقیکردنەوە"
+          }
+        }
+      }
+    },
+    "Family": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خێزان"
+          }
+        }
+      }
+    },
+    "Family code": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کۆدی خێزان"
+          }
+        }
+      }
+    },
+    "Father": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "باوک"
+          }
+        }
+      }
+    },
+    "Full name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناوی تەواو"
+          }
+        }
+      }
+    },
+    "Full record": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تۆماری تەواو"
+          }
+        }
+      }
+    },
+    "Grade": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پۆل"
+          }
+        }
+      }
+    },
+    "Gradebook": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەفتەری نمرە"
+          }
+        }
+      }
+    },
+    "Handed in": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دراوەتەوە"
+          }
+        }
+      }
+    },
+    "Holiday": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پشوو"
+          }
+        }
+      }
+    },
+    "Home": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ماڵ"
+          }
+        }
+      }
+    },
+    "Initials": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پیتەکان"
+          }
+        }
+      }
+    },
+    "Insights": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شیکاری"
+          }
+        }
+      }
+    },
+    "Language": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "زمان"
+          }
+        }
+      }
+    },
+    "Late": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دواکەوتوو"
+          }
+        }
+      }
+    },
+    "Latest marks": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دواترین نمرەکان"
+          }
+        }
+      }
+    },
+    "Leave": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جێبهێڵە"
+          }
+        }
+      }
+    },
+    "Link a child": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بەستنەوەی منداڵ"
+          }
+        }
+      }
+    },
+    "Mark excused": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بە مۆڵەت تۆمار بکە"
+          }
+        }
+      }
+    },
+    "Marks": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نمرەکان"
+          }
+        }
+      }
+    },
+    "Messages": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نامەکان"
+          }
+        }
+      }
+    },
+    "Mother": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دایک"
+          }
+        }
+      }
+    },
+    "My classes": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پۆلەکانم"
+          }
+        }
+      }
+    },
+    "My teachers": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مامۆستاکانم"
+          }
+        }
+      }
+    },
+    "Name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناو"
+          }
+        }
+      }
+    },
+    "Name in Kurdish": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناو بە کوردی"
+          }
+        }
+      }
+    },
+    "New announcement": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕاگەیاندنی نوێ"
+          }
+        }
+      }
+    },
+    "New class": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پۆلی نوێ"
+          }
+        }
+      }
+    },
+    "New message": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نامەی نوێ"
+          }
+        }
+      }
+    },
+    "New password": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وشەی نهێنی نوێ"
+          }
+        }
+      }
+    },
+    "Next class": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وانەی داهاتوو"
+          }
+        }
+      }
+    },
+    "No classes assigned yet.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا هیچ پۆلێکت پێ نەدراوە"
+          }
+        }
+      }
+    },
+    "No classes yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا هیچ پۆلێک نییە"
+          }
+        }
+      }
+    },
+    "No conversations yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا هیچ گفتوگۆیەک نییە"
+          }
+        }
+      }
+    },
+    "No lessons this day.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هیچ وانەیەک نییە لەم ڕۆژەدا"
+          }
+        }
+      }
+    },
+    "No students in this class yet.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا هیچ قوتابییەک لەم پۆلەدا نییە"
+          }
+        }
+      }
+    },
+    "No teachers yet": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا مامۆستا نییە"
+          }
+        }
+      }
+    },
+    "Not marked": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تۆمار نەکراوە"
+          }
+        }
+      }
+    },
+    "Nothing reported": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هیچ ڕاپۆرتێک نییە"
+          }
+        }
+      }
+    },
+    "Notifications": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئاگادارکردنەوەکان"
+          }
+        }
+      }
+    },
+    "Now": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئێستا"
+          }
+        }
+      }
+    },
+    "OVERALL": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "گشتی"
+          }
+        }
+      }
+    },
+    "Overview": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "گشتی"
+          }
+        }
+      }
+    },
+    "Parent": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دایک یان باوک"
+          }
+        }
+      }
+    },
+    "Parents": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دایک و باوکان"
+          }
+        }
+      }
+    },
+    "Password": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وشەی نهێنی"
+          }
+        }
+      }
+    },
+    "Password changed": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وشەی نهێنی گۆڕدرا."
+          }
+        }
+      }
+    },
+    "People": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خەڵک"
+          }
+        }
+      }
+    },
+    "Phone": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تەلەفۆن"
+          }
+        }
+      }
+    },
+    "Post": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بڵاوکردنەوە"
+          }
+        }
+      }
+    },
+    "Posted": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بڵاوکرایەوە"
+          }
+        }
+      }
+    },
+    "Present": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئامادە"
+          }
+        }
+      }
+    },
+    "Privacy policy": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سیاسەتی تایبەتمەندی"
+          }
+        }
+      }
+    },
+    "Profile": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پڕۆفایل"
+          }
+        }
+      }
+    },
+    "Quick actions": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کردارە خێراکان"
+          }
+        }
+      }
+    },
+    "Reason": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هۆکار"
+          }
+        }
+      }
+    },
+    "Recent": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دواترین"
+          }
+        }
+      }
+    },
+    "Reply": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وەڵام"
+          }
+        }
+      }
+    },
+    "Report": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕاپۆرت"
+          }
+        }
+      }
+    },
+    "Report card": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کارتی ئەنجام"
+          }
+        }
+      }
+    },
+    "Reports": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ڕاپۆرتەکان"
+          }
+        }
+      }
+    },
+    "Room": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ژوور"
+          }
+        }
+      }
+    },
+    "Save": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پاشەکەوتکردن"
+          }
+        }
+      }
+    },
+    "Schedule": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خشتە"
+          }
+        }
+      }
+    },
+    "School code": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کۆدی قوتابخانە"
+          }
+        }
+      }
+    },
+    "School name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناوی قوتابخانە بە ئینگلیزی"
+          }
+        }
+      }
+    },
+    "School year": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ساڵی خوێندن"
+          }
+        }
+      }
+    },
+    "Search by name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "گەڕان بە ناو"
+          }
+        }
+      }
+    },
+    "Search people": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "گەڕان بەدوای کەسەکان"
+          }
+        }
+      }
+    },
+    "Section": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بەش"
+          }
+        }
+      }
+    },
+    "Semester 1": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وەرزی 1"
+          }
+        }
+      }
+    },
+    "Semester 2": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وەرزی 2"
+          }
+        }
+      }
+    },
+    "Separated": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جیا دەژین"
+          }
+        }
+      }
+    },
+    "Share": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هاوبەشکردن"
+          }
+        }
+      }
+    },
+    "Sign In": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چوونە ژوورەوە"
+          }
+        }
+      }
+    },
+    "Students": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قوتابی"
+          }
+        }
+      }
+    },
+    "Subject": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بابەت"
+          }
+        }
+      }
+    },
+    "Take the register": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئامادەبوون وەربگرە"
+          }
+        }
+      }
+    },
+    "Tap a subject for its four parts — 10 · 20 · 10 · 60.": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بابەتێک لێبدە بۆ چوار بەشەکەی — 10 · 20 · 10 · 60."
+          }
+        }
+      }
+    },
+    "Tap your name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دەست بە ناوەکەت بنێ"
+          }
+        }
+      }
+    },
+    "Teacher": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مامۆستا"
+          }
+        }
+      }
+    },
+    "Teacher added": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مامۆستایەک زیادکرا"
+          }
+        }
+      }
+    },
+    "Teachers": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "مامۆستایان"
+          }
+        }
+      }
+    },
+    "Teaches": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وانە دەڵێت"
+          }
+        }
+      }
+    },
+    "This month": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئەم مانگە"
+          }
+        }
+      }
+    },
+    "This year": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئەم ساڵە"
+          }
+        }
+      }
+    },
+    "Timetable": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "خشتەی وانەکان"
+          }
+        }
+      }
+    },
+    "Title": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناونیشان"
+          }
+        }
+      }
+    },
+    "Today": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئەمڕۆ"
+          }
+        }
+      }
+    },
+    "Total": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سەرجەم"
+          }
+        }
+      }
+    },
+    "Unblock": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لابردنی بلۆک"
+          }
+        }
+      }
+    },
+    "Unlock": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "کردنەوە"
+          }
+        }
+      }
+    },
+    "Unread": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "نەخوێندراوە"
+          }
+        }
+      }
+    },
+    "Website": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ماڵپەڕ"
+          }
+        }
+      }
+    },
+    "Weekly review": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هەڵسەنگاندنی هەفتانە"
+          }
+        }
+      }
+    },
+    "Work": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئەرکەکان"
+          }
+        }
+      }
+    },
+    "Your name": {
+      "extractionState": "manual",
+      "localizations": {
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناوت"
+          }
+        }
+      }
+    },
+    "common.cancel": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "پاشگەزبوونەوە"
+          }
+        }
+      }
+    },
+    "common.inProgress": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "In progress"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لە کاردایە"
+          }
+        }
+      }
+    },
+    "common.retry": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Try again"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "دووبارە هەوڵ بدەرەوە"
+          }
+        }
+      }
+    },
+    "common.signOut": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign out"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چوونە دەرەوە"
+          }
+        }
+      }
+    },
+    "error.badCredentials": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "That email and password do not match."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئیمەیڵ و وشەی نهێنی یەک ناگرنەوە."
+          }
+        }
+      }
+    },
+    "error.network": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot reach Dars. Check your connection and try again."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ناتوانرێت پەیوەندی بە دەرس بکرێت. پەیوەندییەکەت بپشکنە و دووبارە هەوڵ بدەرەوە."
+          }
+        }
+      }
+    },
+    "error.noProfile": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your account is not attached to a school yet. Ask your school to finish setting it up."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هەژمارەکەت هێشتا بە قوتابخانەیەکەوە نەبەستراوە. داوا لە قوتابخانەکەت بکە ڕێکخستنەکەی تەواو بکات."
+          }
+        }
+      }
+    },
+    "home.building": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Signed in against the real database. The role screens are next."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چوویتە ژوورەوە بە بنکەدراوەی ڕاستەقینە. شاشەکانی ڕۆڵ دواتر دێن."
+          }
+        }
+      }
+    },
+    "login.email": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Email"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ئیمەیڵ"
+          }
+        }
+      }
+    },
+    "login.imAStudent": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "I am a student"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "من قوتابیم"
+          }
+        }
+      }
+    },
+    "login.password": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Password"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "وشەی نهێنی"
+          }
+        }
+      }
+    },
+    "login.signIn": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چوونە ژوورەوە"
+          }
+        }
+      }
+    },
+    "login.subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in to your school"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بچۆ ژوورەوە بۆ قوتابخانەکەت"
+          }
+        }
+      }
+    },
+    "orphaned.body": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your account exists, but your school has not finished setting it up. Ask them to add you, then sign in again."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هەژمارەکەت هەیە، بەڵام قوتابخانەکەت هێشتا ڕێکخستنەکەی تەواو نەکردووە. داوایان لێ بکە زیادت بکەن، پاشان دووبارە بچۆ ژوورەوە."
+          }
+        }
+      }
+    },
+    "orphaned.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not attached to a school"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بە قوتابخانەیەکەوە نەبەستراوە"
+          }
+        }
+      }
+    },
+    "state.empty.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nothing here yet"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "هێشتا هیچ لێرە نییە"
+          }
+        }
+      }
+    },
+    "state.error.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Something went wrong"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شتێک هەڵەی تێدا بوو"
+          }
+        }
+      }
+    },
+    "state.loading": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بارکردن"
+          }
+        }
+      }
+    },
+    "student.signIn.nav": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Students"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "قوتابیان"
+          }
+        }
+      }
+    },
+    "student.signIn.soon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sign in with your class code. Being built."
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "بە کۆدی پۆلەکەت بچۆ ژوورەوە. لە بنیاتنانە."
+          }
+        }
+      }
+    },
+    "student.signIn.title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Student sign-in"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "چوونەژوورەوەی قوتابی"
+          }
+        }
+      }
+    },
+    "tabs.home": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Home"
+          }
+        },
+        "ckb": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "سەرەکی"
+          }
+        }
+      }
+    }
+  }
+}

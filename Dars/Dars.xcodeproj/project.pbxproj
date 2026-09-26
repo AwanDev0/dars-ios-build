@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0476A05972EC595F0ECDBEFF = {isa = PBXBuildFile; fileRef = B58D7F079C086DE268A0D096; };
+		0DCAF242B24CAB624A098A96 = {isa = PBXBuildFile; fileRef = B9230084788DAB705EBD0D48; };
+		1718FDBBC303AA000CD17079 = {isa = PBXBuildFile; fileRef = 2ACD4B727A1AF3327BE0F34F; };
+		1BC7680B47B0AE7BC9D6F48F = {isa = PBXBuildFile; fileRef = 4126EB1C9BE3C2EE189012D5; };
+		1D6648F7A4B97A3D58EC4E96 = {isa = PBXBuildFile; fileRef = 019B4FD2CD1004D243092F47; };
+		2393D81E534212D186464B22 = {isa = PBXBuildFile; fileRef = 943206E52509834B95FB1E45; };
+		24B08B565CA0A165FA85CCC8 = {isa = PBXBuildFile; fileRef = 62A74BDA73152A8885050E15; };
+		275BD30C9092BCC0B2B7AAAD = {isa = PBXBuildFile; fileRef = B133E8B2DBE3E751CAC5F253; };
+		2B1C294F7B99CE4545F13D46 = {isa = PBXBuildFile; fileRef = C7C997B9132CB1A48A11EF42; };
+		3103AFDF4B9FA95E575D8DCE = {isa = PBXBuildFile; fileRef = E8D0BA82612FAFD2766F8C2A; };
+		39EC5CF68F09A8CB88F8C06A = {isa = PBXBuildFile; fileRef = 4EB52EDCF982AF555696EB7B; };
+		3A94A2F29820E6762845E7B2 = {isa = PBXBuildFile; fileRef = FA8866A16C892D62E7388421; };
+		3C571EE221ABE95FCB8F2997 = {isa = PBXBuildFile; fileRef = 824BEF4A4B9216B2FFE6641B; };
+		4C3C0F0970617774E73EC5E1 = {isa = PBXBuildFile; fileRef = CC844D1CC1E047578DE8FDA7; };
+		4E3CA19D1A0DB61838167CBA = {isa = PBXBuildFile; fileRef = 8A8AAFDACD85384BB1BBAB08; };
+		4F8CD9D0A7ED8FB8FD89607F = {isa = PBXBuildFile; fileRef = 85D017029B62617BDB7B88DD; };
+		4FE8AFE5E3867F786F7A0B9B = {isa = PBXBuildFile; fileRef = 1AC40726BF043E117635D04A; };
+		5C103D4C4479248F44D0B443 = {isa = PBXBuildFile; fileRef = 3F3DF48B63A39E2E81143125; };
+		634BADC30EE6520FE83690F6 = {isa = PBXBuildFile; productRef = 44E912A848E83FFCF821E463; };
+		6E31D3F4719EE750686626D0 = {isa = PBXBuildFile; fileRef = 14641630C5D7F3BDD58EA1ED; };
+		6EEEF6A3DD777728AF89E10B = {isa = PBXBuildFile; fileRef = 7575BA20FCB5A626E57AF50A; };
+		713B2BC3CA2667EDECC05FDB = {isa = PBXBuildFile; fileRef = 3B2EAF97E03D10C9161E5236; };
+		796C8EFB00E51F108C24E3AD = {isa = PBXBuildFile; fileRef = 026A27A9562257F6D6A22277; };
+		7DD5952381CD87A0CB0512B5 = {isa = PBXBuildFile; fileRef = 6390850025AC0CAAA3770860; };
+		849CAA0BB487E7F021D2180E = {isa = PBXBuildFile; fileRef = 93964F97BDD2D0403D2FD6BB; };
+		85578B7E6BEB0A90B19BBD25 = {isa = PBXBuildFile; fileRef = BBE5073327448458C9DBCF27; };
+		85807915BE4118865723EFEE = {isa = PBXBuildFile; fileRef = E171E12D8139D2910AA53AFE; };
+		87BC0FAF8BAB9997EB23BB75 = {isa = PBXBuildFile; fileRef = ABCAF5F10163DFB91FA0E576; };
+		88EA618FC18AA90122070717 = {isa = PBXBuildFile; fileRef = 9F850A3C362814A78B6D787A; };
+		8A16A8CE55B629A14F08610D = {isa = PBXBuildFile; fileRef = 9F98D713DA9EAE93F279602D; };
+		8C9FABDC4C8F00A28E64A15E = {isa = PBXBuildFile; fileRef = 6787A58DC5832483BA6571BA; };
+		8D6627B140D86EE1B838BF31 = {isa = PBXBuildFile; fileRef = 484AA59FDC2615C86DFD34F7; };
+		90C2DA60CDC81793BEB5BBA3 = {isa = PBXBuildFile; fileRef = 39EA273FDE94A23163E3AB1E; };
+		9E810687338562087EE0B8BE = {isa = PBXBuildFile; fileRef = B7791CC58DC3C61622ECDF53; };
+		A7B8317541B994B994421BE1 = {isa = PBXBuildFile; fileRef = 0511EBBDF0C093235E03426D; };
+		A7D7BA8DB3B5754F91EF4A45 = {isa = PBXBuildFile; fileRef = F04C735EA8DE2AB1F59381FA; };
+		A8E09D9149A22F0786762855 = {isa = PBXBuildFile; fileRef = 5760CACAF292B21BB66827B1; };
+		AA7935B0337EB7AD14A72237 = {isa = PBXBuildFile; fileRef = DE0A961EF9BA5A7938108934; };
+		AF3D32A41E6470DABDFFA790 = {isa = PBXBuildFile; fileRef = D3D513886106536D5B7EBC07; };
+		B52BD6A8E89926C0D19FD3B6 = {isa = PBXBuildFile; fileRef = B68ADD225E0BC980D9BA90AF; };
+		B5CF8898C9714AEE8C9FD464 = {isa = PBXBuildFile; fileRef = BB4D2C86D2EA43166F69F2AC; };
+		BB356CFF8981EFFA668E0504 = {isa = PBXBuildFile; fileRef = 6DB3A25D737D6245F65F7922; };
+		BF749A630745F35C3CFF3659 = {isa = PBXBuildFile; fileRef = C3A8BA57E0E674110ED05E0C; };
+		C9FF6D7029426FA980F60111 = {isa = PBXBuildFile; fileRef = C023AEDC3C57E76E638952BA; };
+		CA8E68A56D24F49DF8A5E64E = {isa = PBXBuildFile; fileRef = 143AF8596C96A65F8E529991; };
+		CB8A675D2C6484486FB314C4 = {isa = PBXBuildFile; fileRef = D83EF12AD95FCF73428A15F5; };
+		CCF267542C59AE6D8C345EE0 = {isa = PBXBuildFile; fileRef = C349CE48EE08998A366F1D21; };
+		CF3F098317B53FED3646BE88 = {isa = PBXBuildFile; fileRef = 95391EF517F9B4D3E2C619AD; };
+		D24E0DF53A3709949BB5955C = {isa = PBXBuildFile; fileRef = 033BE919AEEA15AF7BC5B5DF; };
+		D9FF878CF14BC5D68EDDD7DD = {isa = PBXBuildFile; fileRef = A56B0CD00C40A505723FBC83; };
+		E3343957EDB095342C88DF0A = {isa = PBXBuildFile; fileRef = 5838192D12AFB7A10EFE72A9; };
+		ED01BB029C3E109FA236B769 = {isa = PBXBuildFile; fileRef = CA33E6B461369E960BFCFE92; };
+		F02E1834770837AC4CC56A25 = {isa = PBXBuildFile; fileRef = 32E437DF02C185210D55901B; };
+		F2DDD575D7B2C5757527E627 = {isa = PBXBuildFile; fileRef = 45421DE0905CA8932EB2A183; };
+		F5686C772D5B87D061A4BAF3 = {isa = PBXBuildFile; fileRef = D0F13A5A6FD426BAB5A252A2; };
+		F592BA25A5010EA789A400FB = {isa = PBXBuildFile; fileRef = 015DAC0A2FBFA74D45E78944; };
+		F6F59B9F07DBBB12AFED9C1A = {isa = PBXBuildFile; fileRef = EAEEB10F7115B823BFF3D666; };
+		F7A886492E55589D2A1E0DAF = {isa = PBXBuildFile; fileRef = 3EE5089F53C27BB2002E3881; };
+		F8F49E7B014712CCE0951354 = {isa = PBXBuildFile; fileRef = 2D63B1E8309D2B661768785A; };
+		FA126DEC093EFF19F7C05AFA = {isa = PBXBuildFile; fileRef = 36304E25C54228E547869F83; };
+		FA3465B1846D717003361343 = {isa = PBXBuildFile; fileRef = 52E5FB495DDDE4B2CB4978B5; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		015DAC0A2FBFA74D45E78944 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportsView.swift; sourceTree = "<group>"; };
+		019B4FD2CD1004D243092F47 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStudentView.swift; sourceTree = "<group>"; };
+		026A27A9562257F6D6A22277 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		033BE919AEEA15AF7BC5B5DF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkView.swift; sourceTree = "<group>"; };
+		0511EBBDF0C093235E03426D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressMotionStyle.swift; sourceTree = "<group>"; };
+		143AF8596C96A65F8E529991 = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		14641630C5D7F3BDD58EA1ED = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewChatView.swift; sourceTree = "<group>"; };
+		1AC40726BF043E117635D04A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellView.swift; sourceTree = "<group>"; };
+		2ACD4B727A1AF3327BE0F34F = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassSurface.swift; sourceTree = "<group>"; };
+		2D63B1E8309D2B661768785A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsType.swift; sourceTree = "<group>"; };
+		32E437DF02C185210D55901B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		36304E25C54228E547869F83 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDoor.swift; sourceTree = "<group>"; };
+		39EA273FDE94A23163E3AB1E = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsButton.swift; sourceTree = "<group>"; };
+		3B2EAF97E03D10C9161E5236 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		3EE5089F53C27BB2002E3881 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentHomeView.swift; sourceTree = "<group>"; };
+		3F3DF48B63A39E2E81143125 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarksView.swift; sourceTree = "<group>"; };
+		4126EB1C9BE3C2EE189012D5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		45421DE0905CA8932EB2A183 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayStore.swift; sourceTree = "<group>"; };
+		484AA59FDC2615C86DFD34F7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsData.swift; sourceTree = "<group>"; };
+		4EB52EDCF982AF555696EB7B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
+		52E5FB495DDDE4B2CB4978B5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsMetrics.swift; sourceTree = "<group>"; };
+		5760CACAF292B21BB66827B1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeeklyReviewView.swift; sourceTree = "<group>"; };
+		5838192D12AFB7A10EFE72A9 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenStates.swift; sourceTree = "<group>"; };
+		62A74BDA73152A8885050E15 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bits.swift; sourceTree = "<group>"; };
+		6390850025AC0CAAA3770860 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		6787A58DC5832483BA6571BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminPeopleView.swift; sourceTree = "<group>"; };
+		6DB3A25D737D6245F65F7922 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOverviewView.swift; sourceTree = "<group>"; };
+		7575BA20FCB5A626E57AF50A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradebookView.swift; sourceTree = "<group>"; };
+		824BEF4A4B9216B2FFE6641B = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRecordView.swift; sourceTree = "<group>"; };
+		85D017029B62617BDB7B88DD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		8A8AAFDACD85384BB1BBAB08 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminClassesView.swift; sourceTree = "<group>"; };
+		93964F97BDD2D0403D2FD6BB = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorText.swift; sourceTree = "<group>"; };
+		943206E52509834B95FB1E45 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushRegistrar.swift; sourceTree = "<group>"; };
+		95391EF517F9B4D3E2C619AD = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		9C3A82923C76B663159B1A01 = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dars.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F850A3C362814A78B6D787A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherClassesView.swift; sourceTree = "<group>"; };
+		9F98D713DA9EAE93F279602D = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminScheduleView.swift; sourceTree = "<group>"; };
+		A56B0CD00C40A505723FBC83 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeCard.swift; sourceTree = "<group>"; };
+		ABCAF5F10163DFB91FA0E576 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStore.swift; sourceTree = "<group>"; };
+		B133E8B2DBE3E751CAC5F253 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceCalendarView.swift; sourceTree = "<group>"; };
+		B58D7F079C086DE268A0D096 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionTokens.swift; sourceTree = "<group>"; };
+		B68ADD225E0BC980D9BA90AF = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreadView.swift; sourceTree = "<group>"; };
+		B7791CC58DC3C61622ECDF53 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
+		B9230084788DAB705EBD0D48 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		BB4D2C86D2EA43166F69F2AC = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeachersView.swift; sourceTree = "<group>"; };
+		BBE5073327448458C9DBCF27 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleTabBar.swift; sourceTree = "<group>"; };
+		C023AEDC3C57E76E638952BA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		C349CE48EE08998A366F1D21 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsColor.swift; sourceTree = "<group>"; };
+		C3A8BA57E0E674110ED05E0C = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
+		C7C997B9132CB1A48A11EF42 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementsView.swift; sourceTree = "<group>"; };
+		CA33E6B461369E960BFCFE92 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolSettingsView.swift; sourceTree = "<group>"; };
+		CC844D1CC1E047578DE8FDA7 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceView.swift; sourceTree = "<group>"; };
+		D0F13A5A6FD426BAB5A252A2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherHomeView.swift; sourceTree = "<group>"; };
+		D3D513886106536D5B7EBC07 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportCardSheet.swift; sourceTree = "<group>"; };
+		D83EF12AD95FCF73428A15F5 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageStore.swift; sourceTree = "<group>"; };
+		DE0A961EF9BA5A7938108934 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarsApp.swift; sourceTree = "<group>"; };
+		E171E12D8139D2910AA53AFE = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostComposerView.swift; sourceTree = "<group>"; };
+		E8D0BA82612FAFD2766F8C2A = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		EAEEB10F7115B823BFF3D666 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsView.swift; sourceTree = "<group>"; };
+		F04C735EA8DE2AB1F59381FA = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightsView.swift; sourceTree = "<group>"; };
+		FA8866A16C892D62E7388421 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53421FB35A11B38F9C0AC42F = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634BADC30EE6520FE83690F6,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01D6DBFBD1317BAA0AE7ADC8 = {
+			isa = PBXGroup;
+			children = (
+				026A27A9562257F6D6A22277,
+				B58D7F079C086DE268A0D096,
+				0511EBBDF0C093235E03426D,
+			);
+			path = Motion;
+			sourceTree = "<group>";
+		};
+		10FCA5E1D813E22BDD6534DA = {
+			isa = PBXGroup;
+			children = (
+				CC844D1CC1E047578DE8FDA7,
+				7575BA20FCB5A626E57AF50A,
+				E171E12D8139D2910AA53AFE,
+				9F850A3C362814A78B6D787A,
+				D0F13A5A6FD426BAB5A252A2,
+				5760CACAF292B21BB66827B1,
+			);
+			path = Teacher;
+			sourceTree = "<group>";
+		};
+		1587E48D14C3C9A75FA25982 = {
+			isa = PBXGroup;
+			children = (
+				F04C735EA8DE2AB1F59381FA,
+				3F3DF48B63A39E2E81143125,
+				95391EF517F9B4D3E2C619AD,
+				BB4D2C86D2EA43166F69F2AC,
+				45421DE0905CA8932EB2A183,
+				4EB52EDCF982AF555696EB7B,
+				033BE919AEEA15AF7BC5B5DF,
+			);
+			path = Student;
+			sourceTree = "<group>";
+		};
+		1A5575E7A727532A3570BE22 = {
+			isa = PBXGroup;
+			children = (
+				484AA59FDC2615C86DFD34F7,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		24863F4C0DCC9EEC0437C8E7 = {
+			isa = PBXGroup;
+			children = (
+				E933DD125A57E6B60714B32C,
+				9CBCF86B4FF5FE427C0FCE71,
+				D7B5EE1E018DCBF2E46FEC13,
+				263F5CE23F98E683A31D03CE,
+				1A5575E7A727532A3570BE22,
+				2F03D43BFE0CF88431761636,
+				ED3C9B13659F06ECE9939B3A,
+				298429A1C012F059F5D028C3,
+				01D6DBFBD1317BAA0AE7ADC8,
+				D64F96076D4F609A30C73946,
+				6192262DE4B27AD6BE506910,
+				58D682CC2205F415B49E9E28,
+				E8518B65A2360588DD7BDD05,
+				EA9A16F64C78E99ECB5CC73A,
+				1587E48D14C3C9A75FA25982,
+				CC2931240EAD30BFAE7627BA,
+				10FCA5E1D813E22BDD6534DA,
+				3BE8AEAB71D1FBD2D210FD9C,
+			);
+			sourceTree = "<group>";
+		};
+		263F5CE23F98E683A31D03CE = {
+			isa = PBXGroup;
+			children = (
+				B7791CC58DC3C61622ECDF53,
+				EAEEB10F7115B823BFF3D666,
+				14641630C5D7F3BDD58EA1ED,
+				B68ADD225E0BC980D9BA90AF,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		298429A1C012F059F5D028C3 = {
+			isa = PBXGroup;
+			children = (
+				D83EF12AD95FCF73428A15F5,
+				143AF8596C96A65F8E529991,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		2F03D43BFE0CF88431761636 = {
+			isa = PBXGroup;
+			children = (
+				3BCF2F662E915EAF1159CA91,
+				37EC9882E6E1839CD2F32D46,
+				AC7ACC2C9ADFE6D23F8AC529,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		37EC9882E6E1839CD2F32D46 = {
+			isa = PBXGroup;
+			children = (
+				52E5FB495DDDE4B2CB4978B5,
+			);
+			path = Spacing;
+			sourceTree = "<group>";
+		};
+		3BCF2F662E915EAF1159CA91 = {
+			isa = PBXGroup;
+			children = (
+				C349CE48EE08998A366F1D21,
+				C023AEDC3C57E76E638952BA,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		3BE8AEAB71D1FBD2D210FD9C = {
+			isa = PBXGroup;
+			children = (
+				9C3A82923C76B663159B1A01,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4225C1031033F21A19C7A37A = {
+			isa = PBXGroup;
+			children = (
+				62A74BDA73152A8885050E15,
+				39EA273FDE94A23163E3AB1E,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		58D682CC2205F415B49E9E28 = {
+			isa = PBXGroup;
+			children = (
+				3EE5089F53C27BB2002E3881,
+			);
+			path = Parent;
+			sourceTree = "<group>";
+		};
+		6192262DE4B27AD6BE506910 = {
+			isa = PBXGroup;
+			children = (
+				943206E52509834B95FB1E45,
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		9CBCF86B4FF5FE427C0FCE71 = {
+			isa = PBXGroup;
+			children = (
+				8A8AAFDACD85384BB1BBAB08,
+				6DB3A25D737D6245F65F7922,
+				6787A58DC5832483BA6571BA,
+				9F98D713DA9EAE93F279602D,
+				C7C997B9132CB1A48A11EF42,
+				019B4FD2CD1004D243092F47,
+				015DAC0A2FBFA74D45E78944,
+				CA33E6B461369E960BFCFE92,
+				824BEF4A4B9216B2FFE6641B,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		AC7ACC2C9ADFE6D23F8AC529 = {
+			isa = PBXGroup;
+			children = (
+				2D63B1E8309D2B661768785A,
+			);
+			path = Typography;
+			sourceTree = "<group>";
+		};
+		CC2931240EAD30BFAE7627BA = {
+			isa = PBXGroup;
+			children = (
+				C3A8BA57E0E674110ED05E0C,
+			);
+			path = Supabase;
+			sourceTree = "<group>";
+		};
+		D64F96076D4F609A30C73946 = {
+			isa = PBXGroup;
+			children = (
+				BBE5073327448458C9DBCF27,
+				1AC40726BF043E117635D04A,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		D7B5EE1E018DCBF2E46FEC13 = {
+			isa = PBXGroup;
+			children = (
+				ABCAF5F10163DFB91FA0E576,
+				4126EB1C9BE3C2EE189012D5,
+				6390850025AC0CAAA3770860,
+				32E437DF02C185210D55901B,
+				36304E25C54228E547869F83,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		E8518B65A2360588DD7BDD05 = {
+			isa = PBXGroup;
+			children = (
+				E8D0BA82612FAFD2766F8C2A,
+				B9230084788DAB705EBD0D48,
+				FA8866A16C892D62E7388421,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E933DD125A57E6B60714B32C = {
+			isa = PBXGroup;
+			children = (
+				DE0A961EF9BA5A7938108934,
+				85D017029B62617BDB7B88DD,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EA9A16F64C78E99ECB5CC73A = {
+			isa = PBXGroup;
+			children = (
+				4225C1031033F21A19C7A37A,
+				FAEA2AB6A87FC98ED9A156EE,
+				B133E8B2DBE3E751CAC5F253,
+				A56B0CD00C40A505723FBC83,
+				D3D513886106536D5B7EBC07,
+				3B2EAF97E03D10C9161E5236,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		ED3C9B13659F06ECE9939B3A = {
+			isa = PBXGroup;
+			children = (
+				2ACD4B727A1AF3327BE0F34F,
+			);
+			path = Glass;
+			sourceTree = "<group>";
+		};
+		FAEA2AB6A87FC98ED9A156EE = {
+			isa = PBXGroup;
+			children = (
+				93964F97BDD2D0403D2FD6BB,
+				5838192D12AFB7A10EFE72A9,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		184967792B3003704A48D5C7 = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98056AEE81F052C149B65B3A;
+			buildPhases = (
+				7B4DB297605BF69ECF505CFB,
+				53421FB35A11B38F9C0AC42F,
+				129EA76AF676B87844043776,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dars;
+			packageProductDependencies = (
+				44E912A848E83FFCF821E463,
+			);
+			productName = Dars;
+			productReference = 9C3A82923C76B663159B1A01;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19EEF9974CF917C45C7782F7 = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					184967792B3003704A48D5C7 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = F175E2BF0BC23DCF8599C9CA;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ckb,
+			);
+			mainGroup = 24863F4C0DCC9EEC0437C8E7;
+			packageReferences = (
+				00E598FC2A0161DBE3769941,
+			);
+			productRefGroup = 3BE8AEAB71D1FBD2D210FD9C;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				184967792B3003704A48D5C7,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		129EA76AF676B87844043776 = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA8E68A56D24F49DF8A5E64E,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7B4DB297605BF69ECF505CFB = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA7935B0337EB7AD14A72237,
+				4F8CD9D0A7ED8FB8FD89607F,
+				4E3CA19D1A0DB61838167CBA,
+				BB356CFF8981EFFA668E0504,
+				8C9FABDC4C8F00A28E64A15E,
+				8A16A8CE55B629A14F08610D,
+				2B1C294F7B99CE4545F13D46,
+				1D6648F7A4B97A3D58EC4E96,
+				F592BA25A5010EA789A400FB,
+				ED01BB029C3E109FA236B769,
+				3C571EE221ABE95FCB8F2997,
+				87BC0FAF8BAB9997EB23BB75,
+				1BC7680B47B0AE7BC9D6F48F,
+				7DD5952381CD87A0CB0512B5,
+				F02E1834770837AC4CC56A25,
+				FA126DEC093EFF19F7C05AFA,
+				9E810687338562087EE0B8BE,
+				F6F59B9F07DBBB12AFED9C1A,
+				6E31D3F4719EE750686626D0,
+				B52BD6A8E89926C0D19FD3B6,
+				8D6627B140D86EE1B838BF31,
+				CCF267542C59AE6D8C345EE0,
+				C9FF6D7029426FA980F60111,
+				FA3465B1846D717003361343,
+				F8F49E7B014712CCE0951354,
+				1718FDBBC303AA000CD17079,
+				CB8A675D2C6484486FB314C4,
+				796C8EFB00E51F108C24E3AD,
+				0476A05972EC595F0ECDBEFF,
+				A7B8317541B994B994421BE1,
+				85578B7E6BEB0A90B19BBD25,
+				4FE8AFE5E3867F786F7A0B9B,
+				2393D81E534212D186464B22,
+				F7A886492E55589D2A1E0DAF,
+				3103AFDF4B9FA95E575D8DCE,
+				0DCAF242B24CAB624A098A96,
+				3A94A2F29820E6762845E7B2,
+				24B08B565CA0A165FA85CCC8,
+				90C2DA60CDC81793BEB5BBA3,
+				849CAA0BB487E7F021D2180E,
+				E3343957EDB095342C88DF0A,
+				275BD30C9092BCC0B2B7AAAD,
+				D9FF878CF14BC5D68EDDD7DD,
+				AF3D32A41E6470DABDFFA790,
+				713B2BC3CA2667EDECC05FDB,
+				A7D7BA8DB3B5754F91EF4A45,
+				5C103D4C4479248F44D0B443,
+				CF3F098317B53FED3646BE88,
+				B5CF8898C9714AEE8C9FD464,
+				F2DDD575D7B2C5757527E627,
+				39EC5CF68F09A8CB88F8C06A,
+				D24E0DF53A3709949BB5955C,
+				BF749A630745F35C3CFF3659,
+				4C3C0F0970617774E73EC5E1,
+				6EEEF6A3DD777728AF89E10B,
+				85807915BE4118865723EFEE,
+				88EA618FC18AA90122070717,
+				F5686C772D5B87D061A4BAF3,
+				A8E09D9149A22F0786762855,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		03C3274FFDEE062B4F996540 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		32DD3E44BA5860B5625474B4 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CADisableMinimumFrameDurationOnPhone = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dars;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Dars uses the camera to scan class and family QR codes.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Dars uses Face ID to lock the app on your phone.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dars needs access to your microphone so you can send voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dars needs access to your photos so you can share images in chats.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.dars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D15738E92761E8363B6AAB8 = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CADisableMinimumFrameDurationOnPhone = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Dars;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Dars uses the camera to scan class and family QR codes.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Dars uses Face ID to lock the app on your phone.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Dars needs access to your microphone so you can send voice messages.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Dars needs access to your photos so you can share images in chats.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Automatic;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = app.dars;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_STRICT_CONCURRENCY = targeted;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0CB02C63621DED1BB1E77DB = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98056AEE81F052C149B65B3A = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D15738E92761E8363B6AAB8,
+				32DD3E44BA5860B5625474B4,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F175E2BF0BC23DCF8599C9CA = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				03C3274FFDEE062B4F996540,
+				A0CB02C63621DED1BB1E77DB,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		00E598FC2A0161DBE3769941 = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		44E912A848E83FFCF821E463 = {
+			isa = XCSwiftPackageProductDependency;
+			package = 00E598FC2A0161DBE3769941;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 19EEF9974CF917C45C7782F7;
+}
